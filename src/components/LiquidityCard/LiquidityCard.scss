@@ -1,0 +1,150 @@
+.Liquidity-cards {
+
+}
+
+.LiquidityCard {
+    width: 100%;
+
+    padding: 32px;
+
+    display: flex;
+
+    border-radius: 24px;
+    border: 1px solid var(--borderColor);
+
+    animation: var(--animationDuration) opacityAndScale;
+}
+
+.LiquidityCard + .LiquidityCard {
+    margin-top: 25px;
+}
+
+.LiquidityCard-pair {
+    display: flex;
+    align-items: center;
+}
+
+.LiquidityCard-pair-icons {
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 24px;
+        height: 24px;
+
+        object-fit: cover;
+
+        border-radius: 50%;
+
+        &:last-child {
+            margin-left: -5px;
+
+            box-shadow: 0 0 0 2px white;
+        }
+    }
+}
+
+.LiquidityCard-pair-names {
+    margin-left: 8px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.LiquidityCard-tags {
+    margin-left: 12px;
+
+    display: flex;
+    align-items: center;
+}
+
+.LiquidityCard-tag {
+    padding: 2px 12px;
+
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: var(--accentColor);
+
+    border-radius: 14px;
+    background-color: var(--accentLightColor);
+
+    &.green {
+        color: var(--greenColor);
+        background-color: var(--greenLightColor);
+    }
+}
+
+.LiquidityCard-tag + .LiquidityCard-tag {
+    margin-left: 12px;
+}
+
+.LiquidityCard-swap {
+    margin-left: 32px;
+
+    display: flex;
+    align-items: center;
+}
+
+.LiquidityCard-swap-item {
+    display: flex;
+    align-items: center;
+}
+
+.LiquidityCard-swap-item-label {
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--mutedTextColor);
+}
+
+.LiquidityCard-swap-item-amount {
+    margin-left: .5ch;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.LiquidityCard-swap-item-per {
+    margin-left: .5ch;
+
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.LiquidityCard-swap-item-currency {
+    margin-left: .5ch;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.LiquidityCard-swap-icon {
+    display: flex;
+    align-items: center;
+
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.LiquidityCard-details-link {
+    margin-left: auto;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--accentColor);
+
+    text-decoration: none;
+
+    transition: all var(--animationDuration) ease-in-out;
+
+    &:hover {
+        color: var(--accentColorActive);
+    }
+}

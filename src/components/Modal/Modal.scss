@@ -1,0 +1,125 @@
+@keyframes modalWrapperAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes modalAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-enter {
+    opacity: 0;
+
+    .Modal {
+        transform: scale(.5);
+    }
+}
+
+.modal-enter-active {
+    opacity: 1;
+
+    transition: opacity var(--animationDuration) ease-in-out;
+
+    .Modal {
+        transform: scale(1);
+
+        transition: transform var(--animationDuration) ease-in-out;
+    }
+}
+
+.modal-exit {
+    opacity: 1;
+
+    .Modal {
+        transform: scale(1);
+    }
+}
+
+.modal-exit-active {
+    opacity: 0;
+
+    transition: opacity calc(var(--animationDuration) / 2) ease-in-out;
+
+    .Modal {
+        transform: scale(.5);
+
+        transition: transform calc(var(--animationDuration) / 2) ease-in-out;
+    }
+}
+
+.Modal-wrapper {
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(#000, .16);
+
+    //animation: var(--animationDuration) modalWrapperAnimation;
+}
+
+.Modal {
+    padding: 32px;
+
+    max-height: 70vh;
+    width: 500px;
+
+    background-color: white;
+    border-radius: 24px;
+
+    //animation: var(--animationDuration) modalAnimation;
+}
+
+.Modal-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.Modal-title {
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+}
+
+.Modal-close {
+    width: 24px;
+    height: 24px;
+
+    padding: 7px;
+    background-color: transparent;
+    border: none;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    svg {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+.Modal-body {
+    margin-top: 24px;
+
+    overflow: auto;
+}

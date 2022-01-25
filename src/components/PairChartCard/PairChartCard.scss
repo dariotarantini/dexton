@@ -1,0 +1,112 @@
+.PairChartCard {
+}
+
+.PairChartCard-head {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.PairChartCard-title {
+    display: flex;
+    align-items: center;
+}
+
+.PairChartCard-icon {
+    width: 24px;
+    height: 24px;
+
+    background-color: white;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+.PairChartCard-icon + .PairChartCard-icon {
+    margin-left: -5px;
+    box-shadow: 0 0 0 2px white;
+}
+
+.PairChartCard-pair {
+    margin-left: 8px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.PairChartCard-days {
+    display: flex;
+}
+
+.PairChartCard-day {
+    padding: 4px 16px;
+
+    background-color: transparent;
+    border: 1px solid var(--accentColor);
+    border-radius: 84px;
+
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: var(--accentColor);
+
+    cursor: pointer;
+
+    transition: all var(--animationDuration) ease-in-out;
+
+    &:hover {
+        color: white;
+        background-color: var(--accentColor);
+    }
+
+    &:active {
+        color: white;
+        background-color: var(--accentColor);
+    }
+
+    &.active {
+        color: white;
+        background-color: var(--accentColor);
+
+        cursor: default;
+    }
+}
+
+.PairChartCard-day + .PairChartCard-day {
+    margin-left: 8px;
+}
+
+.PairChartCard-subhead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.PairChartCard-price {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.PairChartCard-percent {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 19px;
+
+    &.increase {
+        color: #0EA45C;
+    }
+
+    &.decrease {
+        color: #FF4954;
+    }
+}
+
+.PairChartCard-chart {
+    margin-top: 31px;
+}

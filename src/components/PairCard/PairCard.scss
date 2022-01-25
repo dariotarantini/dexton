@@ -1,0 +1,69 @@
+.PairCard {
+    width: 231px;
+    height: 80px;
+
+    padding: 15px;
+
+    border: 1px solid var(--accentColor);
+    box-sizing: border-box;
+    border-radius: 20px;
+
+    display: flex;
+    justify-content: space-between;
+
+    cursor: pointer;
+
+    transition: all var(--animationDuration) ease-in-out;
+
+    &:hover {
+        border-color: var(--accentColorHover);
+    }
+
+    &:active {
+        border-color: var(--accentColorActive);
+
+        transform: scale(.99);
+    }
+}
+
+.PairCard + .PairCard {
+    margin-left: 25px;
+}
+
+.PairCard-name {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: var(--accentColor);
+}
+
+.PairCard-price {
+    margin-top: 5px;
+
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.PairCard-percent {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+
+    text-align: right;
+
+    &.increase {
+        color: #0EA45C;
+    }
+
+    &.decrease {
+        color: #FF4954;
+    }
+}
+
+.PairCard-chart {
+    margin-top: 7px;
+
+    text-align: right;
+}
