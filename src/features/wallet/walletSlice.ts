@@ -17,6 +17,10 @@ const connectWalletThunk = createAsyncThunk('wallet/connect', async (): Promise<
   address: '0xKJfkdsjkjDFjdfhdsugyuAJH',
 }));
 
+const disconnectWalletThunk = createAsyncThunk('wallet/disconnect', async (): Promise<void> => {
+  //
+});
+
 const walletSlice = createSlice({
   name: 'wallet',
   initialState,
@@ -25,6 +29,9 @@ const walletSlice = createSlice({
     builder.addCase(connectWalletThunk.fulfilled, (state, action) => {
       state.wallet = action.payload;
     });
+    builder.addCase(disconnectWalletThunk.fulfilled, (state) => {
+      state.wallet = null;
+    });
   },
 });
 
@@ -32,6 +39,7 @@ interface UseWallet {
   wallet: Wallet | null;
   isWalletConnected: boolean;
   connectWallet: () => void;
+  disconnectWallet: () => void;
 }
 
 export function useWallet(): UseWallet {
@@ -41,11 +49,13 @@ export function useWallet(): UseWallet {
   const isWalletConnected = wallet != null;
 
   const connectWallet = () => dispatch(connectWalletThunk());
+  const disconnectWallet = () => dispatch(disconnectWalletThunk());
 
   return {
     wallet,
     isWalletConnected,
     connectWallet,
+    disconnectWallet,
   };
 }
 

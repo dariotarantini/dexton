@@ -71,8 +71,6 @@
     justify-content: center;
 
     background-color: rgba(#000, .16);
-
-    //animation: var(--animationDuration) modalWrapperAnimation;
 }
 
 .Modal {
@@ -83,8 +81,6 @@
 
     background-color: white;
     border-radius: 24px;
-
-    //animation: var(--animationDuration) modalAnimation;
 }
 
 .Modal-head {
@@ -122,4 +118,47 @@
     margin-top: 24px;
 
     overflow: auto;
+}
+
+.Modal-tabs {
+    margin-bottom: 32px;
+
+    display: flex;
+}
+
+.Modal-tab {
+    padding: 8px 18px;
+
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+
+    border-radius: 25px;
+
+    border: none;
+    background-color: transparent;
+    color: var(--accentColor);
+
+    transition: all var(--animationDuration) ease-in-out;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--hoverColor);
+    }
+
+    &:active {
+        background-color: var(--activeColor);
+    }
+
+    &.active {
+        background-color: var(--accentColor);
+        color: white;
+        cursor: default;
+        pointer-events: none;
+    }
+}
+
+.Modal-tab + .Modal-tab {
+    margin-left: 8px;
 }

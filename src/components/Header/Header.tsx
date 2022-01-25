@@ -4,6 +4,8 @@ import React from 'react';
 import logo from '../../assets/logo.svg';
 import Button from '../Button/Button';
 import { useWallet } from '../../features/wallet/walletSlice';
+import { useOpenModal } from '../../features/modals/modalsSlice';
+import AccountModal from '../AccountModal/AccountModal';
 
 function Header() {
   const {
@@ -11,6 +13,8 @@ function Header() {
     isWalletConnected,
     connectWallet,
   } = useWallet();
+
+  const openModal = useOpenModal();
 
   let shortAddress = '';
   if (wallet) {
@@ -21,7 +25,7 @@ function Header() {
     <header className="Header">
       <NavLink to="/" className="Header-logo">
         <img src={logo} alt="Logo"/>
-        <span className="Header-logo-text">
+        <span className="Header-logo__text">
           TON Swap
         </span>
       </NavLink>
@@ -49,7 +53,12 @@ function Header() {
               >
                 {wallet?.balance}
               </div>
-)}
+            )}
+            onClick={() => {
+              openModal(({ closeModal }) => (
+                <AccountModal closeModal={closeModal}/>
+              ));
+            }}
             icon={(
               <svg
                 style={{

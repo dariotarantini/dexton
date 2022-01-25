@@ -11,6 +11,7 @@ interface ButtonProps {
   inactive?: boolean;
   form?: boolean;
   className?: string;
+  color?: string;
   children?: React.ReactNode;
   onClick?: MouseEventHandler;
   style?: any;
@@ -29,6 +30,7 @@ function Button({
   beforeIcon,
   form = false,
   style,
+  color,
 }: ButtonProps) {
   return (
     <button
@@ -42,6 +44,7 @@ function Button({
         outline ? 'Button--outline' : '',
         form ? 'Button--form' : '',
         inactive ? 'Button--inactive' : '',
+        color ? `Button--${color}` : '',
         className || '',
       ].join(' ')}
     >

@@ -9,6 +9,12 @@
     font-size: 16px;
     line-height: 20px;
 
+    &.Button--red {
+        --accentColor: var(--dangerColor);
+        --accentColorHover: var(--dangerColorHover);
+        --accentColorActive: var(--dangerColorActive);
+    }
+
     background-color: var(--accentColor);
     border: none;
     border-radius: 25px;
