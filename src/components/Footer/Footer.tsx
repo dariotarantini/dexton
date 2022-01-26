@@ -5,9 +5,9 @@ function Footer() {
   return (
     <footer className="Footer">
       <div className="Footer-logo">
-        <span className="Footer-logo-basedon">Based on</span>
+        <span className="Footer-logo__basedon">Based on</span>
         <img src={toncoinIcon} alt="Toncoin"/>
-        <span className="Footer-logo-name">TON</span>
+        <span className="Footer-logo__name">TON</span>
       </div>
 
       <div className="Footer-links">

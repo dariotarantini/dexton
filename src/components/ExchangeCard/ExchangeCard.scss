@@ -67,25 +67,25 @@
     }
 }
 
-.ExchangeCard-tooltip_content {
+.ExchangeCard-tooltip__content {
 }
 
-.ExchangeCard-tooltip_content-item {
+.ExchangeCard-tooltip__content-item {
     display: flex;
     align-items: center;
 }
 
-.ExchangeCard-tooltip_content-item + .ExchangeCard-tooltip_content-item {
+.ExchangeCard-tooltip__content-item + .ExchangeCard-tooltip__content-item {
     margin-top: 6px;
 }
 
-.ExchangeCard-tooltip_content-item-name {
+.ExchangeCard-tooltip__content-item__name {
     margin-right: 8px;
 
     color: var(--mutedTextColor);
 }
 
-.ExchangeCard-tooltip_content-item-value {
+.ExchangeCard-tooltip__content-item__value {
     margin-left: auto;
 }
 
@@ -96,11 +96,11 @@
     border-radius: 14px;
 }
 
-.ConfirmExchange-card-line {
+.ConfirmExchange-card__line {
     display: flex;
 }
 
-.ConfirmExchange-card-line-icon {
+.ConfirmExchange-card__line__icon {
     display: flex;
     align-items: center;
 
@@ -114,7 +114,7 @@
     }
 }
 
-.ConfirmExchange-card-line-amount {
+.ConfirmExchange-card__line__amount {
     margin-left: 12px;
 
     font-weight: bold;
@@ -122,7 +122,7 @@
     line-height: 24px;
 }
 
-.ConfirmExchange-card-line-currency {
+.ConfirmExchange-card__line__currency {
     margin-left: auto;
 
     font-weight: bold;
@@ -130,7 +130,7 @@
     line-height: 24px;
 }
 
-.ConfirmExchange-card-arrow {
+.ConfirmExchange-card__arrow {
     margin-top: 15px;
     margin-bottom: 15px;
 
@@ -164,18 +164,18 @@
     border-top: 1px solid #D9D9D9;
 }
 
-.ConfirmExchange-summary-line {
+.ConfirmExchange-summary__line {
     display: flex;
     align-items: center;
 }
 
-.ConfirmExchange-summary-line-name {
+.ConfirmExchange-summary__line__name {
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
 }
 
-.ConfirmExchange-summary-line-value {
+.ConfirmExchange-summary__line__value {
     margin-left: auto;
 
     font-weight: 500;
@@ -183,7 +183,7 @@
     line-height: 20px;
 }
 
-.ConfirmExchange-summary-line + .ConfirmExchange-summary-line {
+.ConfirmExchange-summary__line + .ConfirmExchange-summary__line {
     margin-top: 16px;
 }
 
@@ -193,7 +193,7 @@
     }
 }
 
-.ExchangeConfirmationStatusModalStatus {
+.ExchangeConfirmationStatusModal {
     .Modal-body {
         display: flex;
         flex-direction: column;
@@ -206,19 +206,19 @@
     }
 
     &.confirmed {
-        .ExchangeConfirmationStatusModalStatus-info {
+        .ExchangeConfirmationStatusModal-info {
             margin-top: 16px;
         }
     }
 }
 
-.ExchangeConfirmationStatusModalStatus-art {
+.ExchangeConfirmationStatusModal-art {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.ExchangeConfirmationStatusModalStatus-title {
+.ExchangeConfirmationStatusModal-title {
     margin: 0;
     margin-top: 32px;
 
@@ -229,7 +229,7 @@
     text-align: center;
 }
 
-.ExchangeConfirmationStatusModalStatus-subtitle {
+.ExchangeConfirmationStatusModal-subtitle {
     margin: 0;
     margin-top: 16px;
 
@@ -240,7 +240,7 @@
     text-align: center;
 }
 
-.ExchangeConfirmationStatusModalStatus-info {
+.ExchangeConfirmationStatusModal-info {
     margin-top: 24px;
 
     font-size: 16px;
@@ -265,7 +265,7 @@
     }
 }
 
-.ExchangeCard-info-text {
+.ExchangeCard-info__text {
     margin-left: 8px;
 
     font-weight: bold;
@@ -273,7 +273,7 @@
     line-height: 18px;
 }
 
-.ExchangeCard-info__text--muted {
+.muted {
     color: var(--mutedTextColor);
 }
 

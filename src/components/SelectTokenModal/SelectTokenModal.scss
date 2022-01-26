@@ -37,7 +37,7 @@
     margin-top: 8px;
 }
 
-.SelectTokenModal-item-icon {
+.SelectTokenModal-item__icon {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -52,17 +52,17 @@
     }
 }
 
-.SelectTokenModal-item-name {
+.SelectTokenModal-item_name {
     margin-left: 19px;
 }
 
-.SelectTokenModal-item-name-short {
+.SelectTokenModal-item_name__short {
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
 }
 
-.SelectTokenModal-item-name-full {
+.SelectTokenModal-item_name__full {
     margin-top: 2px;
 
     font-weight: normal;
@@ -70,7 +70,7 @@
     line-height: 18px;
 }
 
-.SelectTokenModal-item-amount {
+.SelectTokenModal-item__amount {
     margin-left: auto;
 
     font-weight: 500;

@@ -37,28 +37,28 @@ function ConfirmExchangeModal({
       closeModal={closeConfirmModal}
     >
       <div className="ConfirmExchange-card">
-        <div className="ConfirmExchange-card-line">
-          <div className="ConfirmExchange-card-line-icon">
+        <div className="ConfirmExchange-card__line">
+          <div className="ConfirmExchange-card__line__icon">
             <img src={fromToken.icon} alt="ETH"/>
           </div>
-          <div className="ConfirmExchange-card-line-amount">
+          <div className="ConfirmExchange-card__line__amount">
             {amount}
           </div>
-          <div className="ConfirmExchange-card-line-currency">
+          <div className="ConfirmExchange-card__line__currency">
             {fromToken.symbol}
           </div>
         </div>
-        <div className="ConfirmExchange-card-arrow">
+        <div className="ConfirmExchange-card__arrow">
           <img src={arrowDownIcon} alt="Arrow down"/>
         </div>
-        <div className="ConfirmExchange-card-line">
-          <div className="ConfirmExchange-card-line-icon">
+        <div className="ConfirmExchange-card__line">
+          <div className="ConfirmExchange-card__line__icon">
             <img src={toToken.icon} alt="ETH"/>
           </div>
-          <div className="ConfirmExchange-card-line-amount">
+          <div className="ConfirmExchange-card__line__amount">
             {toAmount}
           </div>
-          <div className="ConfirmExchange-card-line-currency">
+          <div className="ConfirmExchange-card__line__currency">
             {toToken.symbol}
           </div>
         </div>
@@ -78,10 +78,10 @@ function ConfirmExchangeModal({
       </p>
 
       <div className="ConfirmExchange-summary">
-        <div className="ConfirmExchange-summary-line">
-          <div className="ConfirmExchange-summary-line-name">Price</div>
+        <div className="ConfirmExchange-summary__line">
+          <div className="ConfirmExchange-summary__line__name">Price</div>
           <div
-            className="ConfirmExchange-summary-line-value"
+            className="ConfirmExchange-summary__line__value"
           >
             {rate?.price}
             {' '}
@@ -92,24 +92,24 @@ function ConfirmExchangeModal({
             {fromToken.symbol}
           </div>
         </div>
-        <div className="ConfirmExchange-summary-line">
-          <div className="ConfirmExchange-summary-line-name">Minimum received</div>
-          <div className="ConfirmExchange-summary-line-value">
+        <div className="ConfirmExchange-summary__line">
+          <div className="ConfirmExchange-summary__line__name">Minimum received</div>
+          <div className="ConfirmExchange-summary__line__value">
             {minReceived}
             {' '}
             {toToken.symbol}
           </div>
         </div>
-        <div className="ConfirmExchange-summary-line">
-          <div className="ConfirmExchange-summary-line-name">Price Impact</div>
-          <div className="ConfirmExchange-summary-line-value">
+        <div className="ConfirmExchange-summary__line">
+          <div className="ConfirmExchange-summary__line__name">Price Impact</div>
+          <div className="ConfirmExchange-summary__line__value">
             {priceImpact}
             %
           </div>
         </div>
-        <div className="ConfirmExchange-summary-line">
-          <div className="ConfirmExchange-summary-line-name">Liquidity Provider Fee</div>
-          <div className="ConfirmExchange-summary-line-value">
+        <div className="ConfirmExchange-summary__line">
+          <div className="ConfirmExchange-summary__line__name">Liquidity Provider Fee</div>
+          <div className="ConfirmExchange-summary__line__value">
             {liquidityProviderFee}
             {' '}
             {fromToken.symbol}

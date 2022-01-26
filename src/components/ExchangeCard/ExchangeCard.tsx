@@ -164,7 +164,7 @@ function ExchangeCard() {
         <div className="ExchangeCard-info">
           <img data-tip="" data-for="test" src={infoIcon} alt="Info"/>
 
-          <span className="ExchangeCard-info-text">
+          <span className="ExchangeCard-info__text">
             1
             {' '}
             {fromToken?.symbol}
@@ -175,7 +175,7 @@ function ExchangeCard() {
             {' '}
             {toToken?.symbol}
             {' '}
-            <span className="ExchangeCard-info__text--muted">($2,740.54)</span>
+            <span className="muted">($2,740.54)</span>
           </span>
         </div>
       )}

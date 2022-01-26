@@ -37,11 +37,11 @@ function ExchangeConfirmationStatusModal({
   return (
     <Modal
       closeModal={closeModal}
-      modalClassName={['ExchangeConfirmationStatusModalStatus', isSubmitted ? 'confirmed' : ''].join(' ')}
+      modalClassName={['ExchangeConfirmationStatusModal', isSubmitted ? 'confirmed' : ''].join(' ')}
     >
       <div
         key={String(isSubmitted)}
-        className="ExchangeConfirmationStatusModalStatus-art"
+        className="ExchangeConfirmationStatusModal-art"
       >
         <Lottie
           loop
@@ -55,14 +55,14 @@ function ExchangeConfirmationStatusModal({
       </div>
 
       <h2
-        className="ExchangeConfirmationStatusModalStatus-title"
+        className="ExchangeConfirmationStatusModal-title"
       >
         {isSubmitted ? 'Transaction Submitted' : 'Confirmation...'}
       </h2>
       {
         !isSubmitted
         && (
-          <h4 className="ExchangeConfirmationStatusModalStatus-subtitle">
+          <h4 className="ExchangeConfirmationStatusModal-subtitle">
             Swapping
             {' '}
             {amount}
@@ -78,7 +78,7 @@ function ExchangeConfirmationStatusModal({
         )
       }
       <div
-        className="ExchangeConfirmationStatusModalStatus-info"
+        className="ExchangeConfirmationStatusModal-info"
       >
         {isSubmitted ? 'When the payment status changes, you will receive notifications' : 'Wait for confirm in Metamask'}
       </div>

@@ -6,33 +6,33 @@ function LiquidityCard() {
   return (
     <div className="LiquidityCard">
       <div className="LiquidityCard-pair">
-        <div className="LiquidityCard-pair-icons">
+        <div className="LiquidityCard-pair__icons">
           <img src={ethIcon} alt="ETH"/>
           <img src={ethIcon} alt="ETH"/>
         </div>
 
-        <div className="LiquidityCard-pair-names">
+        <div className="LiquidityCard-pair__names">
           ETH/TON
         </div>
       </div>
 
       <div className="LiquidityCard-tags">
         <div className="LiquidityCard-tag">0.5%</div>
-        <div className="LiquidityCard-tag green">Active</div>
+        <div className="LiquidityCard-tag LiquidityCard-tag--green">Active</div>
       </div>
 
       <div className="LiquidityCard-swap">
-        <div className="LiquidityCard-swap-item">
-          <span className="LiquidityCard-swap-item-label">
+        <div className="LiquidityCard-swap_item">
+          <span className="LiquidityCard-swap_item__label">
             Min:
           </span>
-          <span className="LiquidityCard-swap-item-amount">
+          <span className="LiquidityCard-swap_item__amount">
             1,420.27 ETH
           </span>
-          <span className="LiquidityCard-swap-item-per">
+          <span className="LiquidityCard-swap_item__per">
             per
           </span>
-          <span className="LiquidityCard-swap-item-currency">
+          <span className="LiquidityCard-swap_item__currency">
             TON
           </span>
         </div>
@@ -41,23 +41,23 @@ function LiquidityCard() {
           <img src={swapIcon} alt="swap"/>
         </div>
 
-        <div className="LiquidityCard-swap-item">
-          <span className="LiquidityCard-swap-item-label">
+        <div className="LiquidityCard-swap_item">
+          <span className="LiquidityCard-swap_item__label">
             Max:
           </span>
-          <span className="LiquidityCard-swap-item-amount">
+          <span className="LiquidityCard-swap_item__amount">
             1,420.27 ETH
           </span>
-          <span className="LiquidityCard-swap-item-per">
+          <span className="LiquidityCard-swap_item__per">
             per
           </span>
-          <span className="LiquidityCard-swap-item-currency">
+          <span className="LiquidityCard-swap_item__currency">
             TON
           </span>
         </div>
       </div>
 
-      <a className="LiquidityCard-details-link" href="/liquidity">Details</a>
+      <a className="LiquidityCard-details__link" href="/liquidity">Details</a>
     </div>
   );
 }

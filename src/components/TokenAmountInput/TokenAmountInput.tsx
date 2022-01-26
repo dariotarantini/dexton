@@ -41,7 +41,7 @@ function TokenAmountInput({
     <div className="TokenAmountInput">
       <div className="TokenAmountInput-amount">
         <div
-          className={['TokenAmountInput-amount-balance', !isWalletConnected ? 'not-connected' : ''].join(' ')}
+          className={['TokenAmountInput-amount__balance', !isWalletConnected ? 'not-connected' : ''].join(' ')}
         >
           {makeBalanceLine()}
         </div>
@@ -49,7 +49,7 @@ function TokenAmountInput({
           type="number"
           disabled={disabled}
           value={value}
-          className="TokenAmountInput-amount-input"
+          className="TokenAmountInput-amount__input"
           onKeyPress={(event) => {
             const charCode = (typeof event.which === 'undefined') ? event.keyCode : event.which;
             const charStr = String.fromCharCode(charCode);
@@ -60,23 +60,6 @@ function TokenAmountInput({
           }}
           onInput={(event) => {
             if (event.target instanceof HTMLInputElement) {
-              // if (!event.target.value) {
-              //   event.target.value = '';
-              //
-              //   // @ts-ignore
-              //   event.target.prevValue = '';
-              //
-              //   return;
-              // }
-              //
-              // if (!/[0-9]*[.,]?[0-9]+/.test(event.target.value)) {
-              //   // @ts-ignore
-              //   event.target.value = event.target.prevValue;
-              // }
-              //
-              // // @ts-ignore
-              // event.target.prevValue = event.target.value;
-
               if (onChangeValue) {
                 onChangeValue(event.target.value || '');
               }
@@ -86,7 +69,7 @@ function TokenAmountInput({
         />
       </div>
       <div className="TokenAmountInput-currency">
-        <div className="TokenAmountInput-currency-label">
+        <div className="TokenAmountInput-currency__label">
           {label}
         </div>
         <button
@@ -98,19 +81,19 @@ function TokenAmountInput({
             />
           ))}
           type="button"
-          className="TokenAmountInput-currency-select"
+          className="TokenAmountInput-currency_select"
         >
           {token && (
-            <div className="TokenAmountInput-currency-select-icon">
+            <div className="TokenAmountInput-currency_select__icon">
               <img src={token?.icon} alt="Icon"/>
             </div>
           )}
           <div
-            className="TokenAmountInput-currency-select-name"
+            className="TokenAmountInput-currency_select__name"
           >
             {token ? token.symbol : 'Select Token'}
           </div>
-          <div className="TokenAmountInput-currency-select-arrow">
+          <div className="TokenAmountInput-currency_select__arrow">
             <svg
               width="8"
               height="5"

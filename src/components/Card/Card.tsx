@@ -24,7 +24,7 @@ function Card({
           <div className="Card-head">
             {title && <div className="Card-title">{title}</div>}
             {head}
-            {right && <div className="Card-head-right">{right}</div>}
+            {right && <div className="Card-head__right">{right}</div>}
           </div>
         )
       }

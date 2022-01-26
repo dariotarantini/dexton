@@ -15,7 +15,7 @@
     width: 150px;
 }
 
-.TokenAmountInput-amount-balance {
+.TokenAmountInput-amount__balance {
     font-weight: 500;
     font-size: 13px;
     line-height: 16px;
@@ -27,7 +27,7 @@
     }
 }
 
-.TokenAmountInput-amount-input {
+.TokenAmountInput-amount__input {
     margin-top: 8px;
 
     font-family: "Fira Code", monospace;
@@ -56,7 +56,7 @@
     margin-left: auto;
 }
 
-.TokenAmountInput-currency-label {
+.TokenAmountInput-currency__label {
     font-weight: 500;
     font-size: 13px;
     line-height: 16px;
@@ -66,7 +66,7 @@
     text-align: right;
 }
 
-.TokenAmountInput-currency-select {
+.TokenAmountInput-currency_select {
     margin-top: 8px;
 
     padding: 0;
@@ -83,7 +83,7 @@
     transition: all var(--animationDuration) ease-in-out;
 }
 
-.TokenAmountInput-currency-select-icon {
+.TokenAmountInput-currency_select__icon {
     width: 24px;
     height: 24px;
 
@@ -99,7 +99,7 @@
     }
 }
 
-.TokenAmountInput-currency-select-name {
+.TokenAmountInput-currency_select__name {
     margin-left: 8px;
 
     font-weight: 600 !important;
@@ -107,7 +107,7 @@
     line-height: 20px !important;
 }
 
-.TokenAmountInput-currency-select-arrow {
+.TokenAmountInput-currency_select__arrow {
     margin-left: 8px;
 
     display: flex;

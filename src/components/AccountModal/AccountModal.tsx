@@ -72,7 +72,7 @@ function AccountModalWalletTab({ closeModal }: AccountModalWalletTabProps) {
           <div className="AccountModal-item__name">
             Your Address
           </div>
-          <div className="AccountModal-item__value address">
+          <div className="AccountModal-item__value AccountModal-item__value--address">
             {wallet?.address}
             {' '}
             <CopyIcon/>

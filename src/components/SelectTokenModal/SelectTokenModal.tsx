@@ -34,14 +34,14 @@ function TokenItem({
       }}
       className={['SelectTokenModal-item', selected ? 'selected' : ''].join(' ')}
     >
-      <div className="SelectTokenModal-item-icon">
+      <div className="SelectTokenModal-item__icon">
         <img src={token.icon} alt="ETH"/>
       </div>
-      <div className="SelectTokenModal-item-name">
-        <div className="SelectTokenModal-item-name-short">{token.symbol}</div>
-        <div className="SelectTokenModal-item-name-full">{token.name}</div>
+      <div className="SelectTokenModal-item_name">
+        <div className="SelectTokenModal-item_name__short">{token.symbol}</div>
+        <div className="SelectTokenModal-item_name__full">{token.name}</div>
       </div>
-      <div className="SelectTokenModal-item-amount">
+      <div className="SelectTokenModal-item__amount">
         {balance}
         {' '}
         {token.symbol}

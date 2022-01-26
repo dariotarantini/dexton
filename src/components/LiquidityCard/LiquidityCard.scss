@@ -24,7 +24,7 @@
     align-items: center;
 }
 
-.LiquidityCard-pair-icons {
+.LiquidityCard-pair__icons {
     display: flex;
     align-items: center;
 
@@ -44,7 +44,7 @@
     }
 }
 
-.LiquidityCard-pair-names {
+.LiquidityCard-pair__names {
     margin-left: 8px;
 
     font-weight: 600;
@@ -71,7 +71,7 @@
     border-radius: 14px;
     background-color: var(--accentLightColor);
 
-    &.green {
+    &.LiquidityCard-tag--green {
         color: var(--greenColor);
         background-color: var(--greenLightColor);
     }
@@ -88,19 +88,19 @@
     align-items: center;
 }
 
-.LiquidityCard-swap-item {
+.LiquidityCard-swap_item {
     display: flex;
     align-items: center;
 }
 
-.LiquidityCard-swap-item-label {
+.LiquidityCard-swap_item__label {
     font-size: 16px;
     line-height: 20px;
 
     color: var(--mutedTextColor);
 }
 
-.LiquidityCard-swap-item-amount {
+.LiquidityCard-swap_item__amount {
     margin-left: .5ch;
 
     font-weight: bold;
@@ -108,14 +108,14 @@
     line-height: 20px;
 }
 
-.LiquidityCard-swap-item-per {
+.LiquidityCard-swap_item__per {
     margin-left: .5ch;
 
     font-size: 16px;
     line-height: 20px;
 }
 
-.LiquidityCard-swap-item-currency {
+.LiquidityCard-swap_item__currency {
     margin-left: .5ch;
 
     font-weight: bold;
@@ -131,7 +131,7 @@
     margin-right: 16px;
 }
 
-.LiquidityCard-details-link {
+.LiquidityCard-details__link {
     margin-left: auto;
 
     font-weight: bold;

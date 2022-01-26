@@ -9,35 +9,35 @@ function makeInfoTooltipContent({
   liquidityProviderFee,
 }: UseRate) {
   return (
-    <div className="ExchangeCard-tooltip_content">
-      <div className="ExchangeCard-tooltip_content-item">
+    <div className="ExchangeCard-tooltip__content">
+      <div className="ExchangeCard-tooltip__content-item">
         <span
-          className="ExchangeCard-tooltip_content-item-name"
+          className="ExchangeCard-tooltip__content-item__name"
         >
           Minimum received
         </span>
         <span
-          className="ExchangeCard-tooltip_content-item-value"
+          className="ExchangeCard-tooltip__content-item__value"
         >
           {minReceived}
           {' '}
           {toToken?.symbol}
         </span>
       </div>
-      <div className="ExchangeCard-tooltip_content-item">
+      <div className="ExchangeCard-tooltip__content-item">
         <span
-          className="ExchangeCard-tooltip_content-item-name"
+          className="ExchangeCard-tooltip__content-item__name"
         >
           Price Impact
         </span>
-        <span className="ExchangeCard-tooltip_content-item-value">
+        <span className="ExchangeCard-tooltip__content-item__value">
           {priceImpact}
           %
         </span>
       </div>
-      <div className="ExchangeCard-tooltip_content-item">
-        <span className="ExchangeCard-tooltip_content-item-name">Liquidity Provider Fee</span>
-        <span className="ExchangeCard-tooltip_content-item-value">
+      <div className="ExchangeCard-tooltip__content-item">
+        <span className="ExchangeCard-tooltip__content-item__name">Liquidity Provider Fee</span>
+        <span className="ExchangeCard-tooltip__content-item__value">
           {liquidityProviderFee}
           {' '}
           {fromToken?.symbol}
