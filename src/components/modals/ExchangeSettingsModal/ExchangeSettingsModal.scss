@@ -1,0 +1,87 @@
+.exchange-settings-modal {
+}
+
+.exchange-settings-modal__section {
+}
+
+.exchange-settings-modal__section + .exchange-settings-modal__section {
+    margin-top: 24px;
+}
+
+.exchange-settings-modal__section__title {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+
+    display: flex;
+    align-items: center;
+
+    white-space: nowrap;
+
+    svg {
+        margin-left: 6px;
+    }
+}
+
+.exchange-settings-modal__section__content {
+    margin-top: 16px;
+}
+
+.exchange-settings-modal__buttons {
+    display: flex;
+
+    .button + .button {
+        margin-left: 12px;
+    }
+}
+
+.exchange-settings-modal__input {
+    padding: 7px 14px;
+
+    width: 100%;
+
+    border: none;
+    border-radius: 79px;
+
+    outline: none;
+
+    box-shadow: inset 0 0 0 1px var(--borderColor);
+
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+
+    transition: all var(--animationDuration) ease-in-out;
+
+    text-align: right;
+
+    &::placeholder {
+        color: var(--mutedTextColor);
+    }
+
+    &:focus {
+        box-shadow: inset 0 0 0 1px var(--accentColor);
+    }
+}
+
+.exchange-settings-modal__section--content__slippage {
+    display: flex;
+
+    .button {
+        margin-right: 16px;
+    }
+}
+
+.exchange-settings-modal__section--inline {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    .exchange-settings-modal__section__content {
+        margin-top: 0;
+    }
+
+    .exchange-settings-modal__input {
+        width: 103px;
+    }
+}

@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import Button from '../components/Button/Button';
+import Button from '../components/common/Button/Button';
 import emptyImage from '../assets/empty.svg';
-import LiquidityCard from '../components/LiquidityCard/LiquidityCard';
-import { useWallet } from '../features/wallet/walletSlice';
+import LiquidityCard from '../components/cards/LiquidityCard/LiquidityCard';
+import { useWallet } from '../store/features/wallet/walletSlice';
 
 function PlusIcon() {
   return (
@@ -24,54 +24,54 @@ function LiquidityPage() {
   const [tab, setTab] = useState('all');
 
   return (
-    <div className="Page">
-      <div className="Page-head">
-        <h1 className="Page-title">
+    <div className="page">
+      <div className="page-head">
+        <h1 className="page-title">
           Your Liquidity
         </h1>
         {
           isWalletConnected && (
-            <div className="Page-tabs">
+            <div className="page-tabs">
               <button
                 onClick={() => setTab('all')}
                 type="button"
-                className={['Page-tab', tab === 'all' ? 'active' : ''].join(' ')}
+                className={['page-tab', tab === 'all' ? 'active' : ''].join(' ')}
               >
                 All
-                <span className="Page-tab-count">(12)</span>
+                <span className="page-tab__count">(12)</span>
               </button>
               <button
                 onClick={() => setTab('active')}
                 type="button"
-                className={['Page-tab', tab === 'active' ? 'active' : ''].join(' ')}
+                className={['page-tab', tab === 'active' ? 'active' : ''].join(' ')}
               >
                 Active
-                <span className="Page-tab-count">(5)</span>
+                <span className="page-tab__count">(5)</span>
               </button>
               <button
                 onClick={() => setTab('removed')}
                 type="button"
-                className={['Page-tab', tab === 'removed' ? 'active' : ''].join(' ')}
+                className={['page-tab', tab === 'removed' ? 'active' : ''].join(' ')}
               >
                 Removed
-                <span className="Page-tab-count">(7)</span>
+                <span className="page-tab__count">(7)</span>
               </button>
             </div>
           )
         }
 
-        <Button style={{ marginLeft: 'auto' }} outline icon={<PlusIcon/>}>
+        <Button to="/liquidity/add" style={{ marginLeft: 'auto' }} outline icon={<PlusIcon/>}>
           Add liquidity
         </Button>
       </div>
 
-      <div className="Page-content">
+      <div className="page-content">
         {
           !isWalletConnected ? (
-            <div className="Page-content-empty">
+            <div className="page-content__empty">
               <img className="Page-content-empty-image" src={emptyImage} alt="Empty"/>
 
-              <div className="Page-content-empty-text">
+              <div className="page-content__empty__text">
                 Currently you don’t have any liquidity.
                 <br/>
                 Try to add new.

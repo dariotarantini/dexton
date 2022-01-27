@@ -1,0 +1,164 @@
+@keyframes modalWrapperAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes modalAnimation {
+    0% {
+        opacity: 0;
+        transform: scale(.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-enter {
+    opacity: 0;
+
+    .modal {
+        transform: scale(.5);
+    }
+}
+
+.modal-enter-active {
+    opacity: 1;
+
+    transition: opacity var(--animationDuration) ease-in-out;
+
+    .modal {
+        transform: scale(1);
+
+        transition: transform var(--animationDuration) ease-in-out;
+    }
+}
+
+.modal-exit {
+    opacity: 1;
+
+    .modal {
+        transform: scale(1);
+    }
+}
+
+.modal-exit-active {
+    opacity: 0;
+
+    transition: opacity calc(var(--animationDuration) / 2) ease-in-out;
+
+    .modal {
+        transform: scale(.5);
+
+        transition: transform calc(var(--animationDuration) / 2) ease-in-out;
+    }
+}
+
+.modal-wrapper {
+    position: fixed;
+
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(#000, .16);
+}
+
+.modal {
+    padding: 32px;
+
+    max-height: 70vh;
+    width: 500px;
+
+    background-color: white;
+    border-radius: 24px;
+}
+
+.modal__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal__title {
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+}
+
+.modal__close {
+    width: 24px;
+    height: 24px;
+
+    padding: 7px;
+    background-color: transparent;
+    border: none;
+
+    display: flex;
+    align-items: center;
+
+    cursor: pointer;
+
+    svg {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+.modal__body {
+    margin-top: 24px;
+
+    overflow: auto;
+}
+
+.modal__tabs {
+    margin-bottom: 32px;
+
+    display: flex;
+}
+
+.modal__tab {
+    padding: 8px 18px;
+
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+
+    border-radius: 25px;
+
+    border: none;
+    background-color: transparent;
+    color: var(--accentColor);
+
+    transition: all var(--animationDuration) ease-in-out;
+
+    cursor: pointer;
+
+    &:hover {
+        background-color: var(--hoverColor);
+    }
+
+    &:active {
+        background-color: var(--activeColor);
+    }
+
+    &.active {
+        background-color: var(--accentColor);
+        color: white;
+        cursor: default;
+        pointer-events: none;
+    }
+}
+
+.modal__tab + .modal__tab {
+    margin-left: 8px;
+}

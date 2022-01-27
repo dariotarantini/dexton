@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react';
 import './App.css';
-import Header from './components/Header/Header';
-import Footer from './components/Footer/Footer';
-import { usePopModal } from './features/modals/modalsSlice';
+import Header from './components/common/Header/Header';
+import Footer from './components/common/Footer/Footer';
+import { usePopModal } from './store/features/modals/modalsSlice';
 
 interface AppProps {
   children?: React.ReactNode;

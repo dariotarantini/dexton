@@ -1,0 +1,46 @@
+.card {
+    padding: 32px;
+
+    border: 1px solid var(--borderColor);
+    border-radius: 24px;
+}
+
+.card__head {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+.card__title {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.card__icon {
+    width: 24px;
+    height: 24px;
+
+    object-fit: contain;
+
+    cursor: pointer;
+}
+
+.card__icon + .card__icon {
+    margin-left: 12px;
+}
+
+.card__head__right {
+    margin-left: auto;
+}
+
+.card__body {
+    //
+}
+
+.card__title + .card__body,
+.card__head + .card__body {
+    margin-top: 24px;
+}

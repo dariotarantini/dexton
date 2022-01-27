@@ -1,0 +1,116 @@
+.exchange-card {
+    margin-bottom: 18px;
+
+    position: relative;
+}
+
+.exchange-card__switch_button {
+    position: absolute;
+
+    left: calc(50% - 18px);
+    top: calc(50% - 18px);
+
+    margin-left: auto;
+
+    width: 36px;
+    height: 36px;
+
+    padding: 0;
+
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+
+    cursor: pointer;
+
+    transition: all var(--animationDuration) ease-in-out;
+
+    img {
+        width: inherit;
+        height: inherit;
+
+        object-fit: cover;
+
+        border-radius: inherit;
+    }
+
+    &:hover {
+        transform: rotate(180deg);
+    }
+
+    &:active {
+        transform: rotate(180deg) scale(.96);
+    }
+}
+
+.exchange-card__tooltip {
+    padding: 16px !important;
+    background-color: white !important;
+
+    color: var(--defaultTextColor) !important;
+
+    opacity: 1 !important;
+
+    border: 1px solid var(--borderColor) !important;
+    border-radius: 14px !important;
+
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    line-height: 19px !important;
+
+    &::after {
+        border-right-color: var(--borderColor) !important;
+    }
+}
+
+.exchange-card__tooltip__content {
+}
+
+.exchange-card__tooltip__content__item {
+    display: flex;
+    align-items: center;
+}
+
+.exchange-card__tooltip__content__item + .exchange-card__tooltip__content__item {
+    margin-top: 6px;
+}
+
+.exchange-card__tooltip__content__item__name {
+    margin-right: 8px;
+
+    color: var(--mutedTextColor);
+}
+
+.exchange-card__tooltip__content__item__value {
+    margin-left: auto;
+}
+
+.exchange-card__info {
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 14px;
+        height: 14px;
+
+        object-fit: cover;
+
+        border-radius: 50%;
+    }
+}
+
+.exchange-card__info__text {
+    margin-left: 8px;
+
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.muted {
+    color: var(--mutedTextColor);
+}
+
+.token-amount-input + .exchange-card__info {
+    margin-top: 18px;
+}

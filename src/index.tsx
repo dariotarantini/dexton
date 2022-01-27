@@ -15,7 +15,8 @@ import App from './App';
 import ChartsPage from './pages/ChartsPage';
 
 import { animationDuration, setStyleProps } from './styleProps';
-import { useActiveModals, useCloseModal } from './features/modals/modalsSlice';
+import { useActiveModals, useCloseModal } from './store/features/modals/modalsSlice';
+import AddLiquidityPage from './pages/AddLiquidityPage';
 
 setStyleProps();
 enableMapSet();
@@ -45,6 +46,7 @@ function AnimatedSwitch() {
           <Routes location={location}>
             <Route path="/" element={<MainPage/>}/>
             <Route path="/liquidity" element={<LiquidityPage/>}/>
+            <Route path="/liquidity/add" element={<AddLiquidityPage/>}/>
             <Route path="/charts" element={<ChartsPage/>}/>
           </Routes>
         </CSSTransition>

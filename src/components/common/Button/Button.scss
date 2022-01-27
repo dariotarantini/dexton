@@ -1,0 +1,100 @@
+.button {
+    padding: 8px 18px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+
+    text-decoration: none;
+
+    &.button--red {
+        --accentColor: var(--dangerColor);
+        --accentColorHover: var(--dangerColorHover);
+        --accentColorActive: var(--dangerColorActive);
+    }
+
+    background-color: var(--accentColor);
+    border: none;
+    border-radius: 25px;
+
+    color: white;
+    text-align: center;
+
+    cursor: pointer;
+
+    transition: all var(--animationDuration) ease-in-out;
+
+    &:hover {
+        background-color: var(--accentColorHover);
+    }
+
+    &:active {
+        background-color: var(--accentColorActive);
+    }
+
+    &.button--full {
+        width: 100%;
+    }
+
+    &.button--form {
+        padding: 12px 24px;
+    }
+
+    &.button--outline {
+        background-color: white;
+        box-shadow: inset 0 0 0 2px var(--accentColor);
+
+        color: var(--accentColor);
+
+        &.button--form {
+            box-shadow: inset 0 0 0 1px var(--accentColor);
+        }
+
+        &:hover {
+            background-color: var(--accentColor);
+            color: white;
+        }
+
+        &:active {
+            background-color: var(--accentColorActive);
+            color: white;
+            box-shadow: inset 0 0 0 2px var(--accentColorActive);
+
+            &.button--form {
+                box-shadow: inset 0 0 0 1px var(--accentColorActive);
+            }
+        }
+    }
+
+    &:disabled {
+        cursor: not-allowed;
+
+        background-color: var(--mutedTextColor);
+    }
+
+    &.button--inactive {
+        pointer-events: none;
+        cursor: default;
+    }
+}
+
+.button-icon {
+    margin-right: 8px;
+
+    display: flex;
+    align-items: center;
+
+    svg {
+        width: 12px;
+        height: 12px;
+    }
+}
+
+.token-amount-input + .button,
+.exchange-card__info + .button {
+    margin-top: 18px;
+}

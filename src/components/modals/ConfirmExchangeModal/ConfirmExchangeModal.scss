@@ -1,0 +1,103 @@
+.confirm-exchange-modal {
+    .button {
+        margin-top: 32px;
+    }
+}
+
+.confirm-exchange__card {
+    padding: 16px;
+
+    border: 1px solid var(--borderColor);
+    border-radius: 14px;
+}
+
+.confirm-exchange__card__line {
+    display: flex;
+}
+
+.confirm-exchange__card__line__icon {
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 24px;
+        height: 24px;
+
+        object-fit: cover;
+
+        border-radius: 50%;
+    }
+}
+
+.confirm-exchange__card__line__amount {
+    margin-left: 12px;
+
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+}
+
+.confirm-exchange__card__line__currency {
+    margin-left: auto;
+
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+}
+
+.confirm-exchange__card__arrow {
+    margin-top: 15px;
+    margin-bottom: 15px;
+
+    display: flex;
+    align-items: center;
+
+    img {
+        margin-left: 6px;
+    }
+}
+
+.confirm-exchange__text {
+    margin: 0;
+    margin-top: 24px;
+
+    padding: 0;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.confirm-exchange__summary {
+    margin-top: 24px;
+
+    padding-top: 24px;
+
+    display: flex;
+    flex-direction: column;
+
+    border-top: 1px solid #D9D9D9;
+}
+
+.confirm-exchange__summary__line {
+    display: flex;
+    align-items: center;
+}
+
+.confirm-exchange__summary__line__name {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.confirm-exchange__summary__line__value {
+    margin-left: auto;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.confirm-exchange__summary__line + .confirm-exchange__summary__line {
+    margin-top: 16px;
+}

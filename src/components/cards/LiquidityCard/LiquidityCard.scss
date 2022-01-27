@@ -1,0 +1,150 @@
+.Liquidity-cards {
+
+}
+
+.liquidity-card {
+    width: 100%;
+
+    padding: 32px;
+
+    display: flex;
+
+    border-radius: 24px;
+    border: 1px solid var(--borderColor);
+
+    animation: var(--animationDuration) opacityAndScale;
+}
+
+.liquidity-card + .liquidity-card {
+    margin-top: 25px;
+}
+
+.liquidity-card__pair {
+    display: flex;
+    align-items: center;
+}
+
+.liquidity-card__pair__icons {
+    display: flex;
+    align-items: center;
+
+    img {
+        width: 24px;
+        height: 24px;
+
+        object-fit: cover;
+
+        border-radius: 50%;
+
+        &:last-child {
+            margin-left: -5px;
+
+            box-shadow: 0 0 0 2px white;
+        }
+    }
+}
+
+.liquidity-card__pair__names {
+    margin-left: 8px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.liquidity-card__tags {
+    margin-left: 12px;
+
+    display: flex;
+    align-items: center;
+}
+
+.liquidity-card__tag {
+    padding: 2px 12px;
+
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: var(--accentColor);
+
+    border-radius: 14px;
+    background-color: var(--accentLightColor);
+
+    &.liquidity-card-tag--green {
+        color: var(--greenColor);
+        background-color: var(--greenLightColor);
+    }
+}
+
+.liquidity-card__tag + .liquidity-card__tag {
+    margin-left: 12px;
+}
+
+.liquidity-card__swap {
+    margin-left: 32px;
+
+    display: flex;
+    align-items: center;
+}
+
+.liquidity-card__swap-item {
+    display: flex;
+    align-items: center;
+}
+
+.liquidity-card__swap-item__label {
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--mutedTextColor);
+}
+
+.liquidity-card__swap-item__amount {
+    margin-left: .5ch;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.liquidity-card__swap-item__per {
+    margin-left: .5ch;
+
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.liquidity-card__swap-item__currency {
+    margin-left: .5ch;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.liquidity-card__swap-icon {
+    display: flex;
+    align-items: center;
+
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.liquidity-card__details-link {
+    margin-left: auto;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--accentColor);
+
+    text-decoration: none;
+
+    transition: all var(--animationDuration) ease-in-out;
+
+    &:hover {
+        color: var(--accentColorActive);
+    }
+}

@@ -110,24 +110,45 @@ h4 {
     }
 }
 
-.Page {
+.page {
 
 }
 
-.Page-title {
+.page-title {
     margin: 0;
 }
 
-.Page-head {
+.page-head {
     display: flex;
     align-items: center;
 }
 
-.Page-content {
+.page-head--subpage {
+    justify-content: space-between;
+}
+
+.page-back {
+    display: flex;
+    align-items: center;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--accentColor);
+
+    text-decoration: none;
+
+    svg {
+        margin-right: 8px;
+    }
+}
+
+.page-content {
     margin-top: 32px;
 }
 
-.Page-content-empty {
+.page-content__empty {
     margin-top: 80px;
 
     display: flex;
@@ -135,14 +156,14 @@ h4 {
     align-items: center;
     justify-content: center;
 
-    .Button {
+    .button {
         margin-top: 23px;
 
         width: 300px;
     }
 }
 
-.Page-content-empty-text {
+.page-content__empty__text {
     margin-top: 32px;
 
     font-weight: normal;
@@ -154,13 +175,13 @@ h4 {
     color: var(--mutedTextColor);
 }
 
-.Page-tabs {
+.page-tabs {
     margin-left: 24px;
 
     display: flex;
     align-items: center;
 
-    .Page-tab {
+    .page-tab {
         padding: 8px 18px;
 
         display: flex;
@@ -187,7 +208,7 @@ h4 {
 
         animation: var(--animationDuration) opacityAndScale;
 
-        .Page-tab-count {
+        .page-tab__count {
             margin-left: .5ch;
 
             color: rgba(0, 136, 204, 0.6);
@@ -199,7 +220,7 @@ h4 {
             color: white;
             background-color: var(--accentColor);
 
-            .Page-tab-count {
+            .page-tab__count {
                 color: rgba(255, 255, 255, 0.6);
             }
         }
@@ -209,7 +230,7 @@ h4 {
             background-color: var(--accentColorActive);
             box-shadow: inset 0 0 0 2px var(--accentColorActive);
 
-            .Page-tab-count {
+            .page-tab__count {
                 color: rgba(255, 255, 255, 0.6);
             }
         }
@@ -221,15 +242,49 @@ h4 {
             color: white;
             background-color: var(--accentColor);
 
-            .Page-tab-count {
+            .page-tab__count {
                 color: rgba(255, 255, 255, 0.6);
             }
         }
     }
 
-    .Page-tab + .Page-tab {
+    .page-tab + .page-tab {
         margin-left: 12px;
     }
+}
+
+.page-toolbar {
+    button {
+        padding: 0;
+        background-color: transparent;
+        border: none;
+
+        cursor: pointer;
+    }
+
+    button + button {
+        margin-left: 16px;
+    }
+}
+
+.page-blocks {
+    margin-top: 18px;
+
+    display: grid;
+    grid-template-columns: .5fr .5fr;
+    grid-gap: 25px;
+}
+
+.page-block + .page-block {
+    margin-top: 32px;
+}
+
+.page-block__title {
+    margin-bottom: 24px;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
 }
 
 h1 {

@@ -1,0 +1,116 @@
+.pair-chart-card {
+}
+
+.pair-chart-card__head {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pair-chart-card__title {
+    display: flex;
+    align-items: center;
+}
+
+.pair-chart-card__icon {
+    width: 24px;
+    height: 24px;
+
+    background-color: white;
+
+    border-radius: 50%;
+
+    object-fit: cover;
+}
+
+.pair-chart-card__icon + .pair-chart-card__icon {
+    margin-left: -5px;
+    box-shadow: 0 0 0 2px white;
+}
+
+.pair-chart-card__pair {
+    margin-left: 8px;
+
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.pair-chart-card__days {
+    display: flex;
+}
+
+.pair-chart-card__day {
+    padding: 4px 16px;
+
+    background-color: transparent;
+    border: 1px solid var(--accentColor);
+    border-radius: 84px;
+
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+
+    color: var(--accentColor);
+
+    cursor: pointer;
+
+    transition: all var(--animationDuration) ease-in-out;
+
+    &:hover {
+        color: white;
+        background-color: var(--accentColor);
+    }
+
+    &:active {
+        color: white;
+        background-color: var(--accentColor);
+    }
+
+    &.active {
+        color: white;
+        background-color: var(--accentColor);
+
+        cursor: default;
+    }
+}
+
+.pair-chart-card__day + .pair-chart-card__day {
+    margin-left: 8px;
+}
+
+.pair-chart-card__subhead {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pair-chart-card__price {
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.pair-chart-card__percent {
+    font-weight: bold;
+    font-size: 15px;
+    line-height: 19px;
+
+    &.increase {
+        color: #0EA45C;
+    }
+
+    &.decrease {
+        color: #FF4954;
+    }
+}
+
+.pair-chart-card__chart {
+    margin-top: 31px;
+
+    canvas {
+        max-height: 208px;
+    }
+}

@@ -1,8 +1,8 @@
 import { configureStore } from '@reduxjs/toolkit';
-import tokensSlice from '../features/tokens/tokensSlice';
-import modalsSlice from '../features/modals/modalsSlice';
-import walletSlice from '../features/wallet/walletSlice';
-import swapSlice from '../features/swap/swapSlice';
+import tokensSlice from './features/tokens/tokensSlice';
+import modalsSlice from './features/modals/modalsSlice';
+import walletSlice from './features/wallet/walletSlice';
+import swapSlice from './features/swap/swapSlice';
 
 export const store = configureStore({
   reducer: {

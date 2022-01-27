@@ -1,6 +1,6 @@
 function ChartsPage() {
   return (
-    <div className="Page">
+    <div className="page">
       Charts
     </div>
   );
