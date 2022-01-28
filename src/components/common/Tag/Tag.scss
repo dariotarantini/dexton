@@ -1,0 +1,15 @@
+.tag {
+    padding: 2px 12px;
+
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+
+    background-color: rgba(48, 55, 87, 0.16);
+    border-radius: 14px;
+}
+
+.tag--green {
+    background-color: var(--greenLightColor);
+    color: var(--greenColor);
+}

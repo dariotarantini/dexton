@@ -1,0 +1,47 @@
+.select-commission-card {
+    padding: 24px;
+
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid var(--borderColor);
+    border-radius: 14px;
+
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+
+    .tag:first-child {
+        margin-left: 16px;
+    }
+
+    .tag + .tag {
+        margin-left: 12px;
+    }
+}
+
+.select-commission-card__edit {
+    all: unset;
+
+    margin-left: auto;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--accentColor);
+
+    cursor: pointer;
+
+    transition: all var(--animationDuration) ease-in-out;
+
+    &:hover {
+        color: var(--accentColorActive);
+    }
+
+    &:active {
+        color: var(--accentColorActive);
+    }
+}

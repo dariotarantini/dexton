@@ -148,6 +148,10 @@ h4 {
     margin-top: 32px;
 }
 
+.page-content--liquidity {
+    margin-top: 50px;
+}
+
 .page-content__empty {
     margin-top: 80px;
 
@@ -287,8 +291,121 @@ h4 {
     line-height: 20px;
 }
 
+.page-blocks__col--duck {
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    span {
+        margin-top: 26px;
+
+        max-width: 300px;
+
+        font-size: 19px;
+        line-height: 24px;
+
+        color: var(--mutedTextColor);
+    }
+}
+
 h1 {
     font-weight: 900;
     font-size: 32px;
     line-height: 40px;
+}
+
+.liquidity-prices {
+    display: grid;
+    grid-template-columns: .5fr .5fr;
+    grid-gap: 16px;
+}
+
+.liquidity-price__title {
+    margin-bottom: 8px;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.liquidity-price-card {
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border-radius: 14px;
+    border: 1px solid var(--borderColor);
+}
+
+.liquidity-price-card__button {
+    width: 36px;
+    height: 36px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: var(--accentLightColor);
+    border-radius: 14px;
+
+    color: var(--accentColor);
+
+    cursor: pointer;
+}
+
+.liquidity-price-card__amount {
+    input {
+        width: 100px;
+
+        padding: 0;
+
+        font-weight: 600;
+        font-size: 19px;
+        line-height: 25px;
+
+        border: none;
+
+        text-align: center;
+
+        outline: none;
+    }
+}
+
+.liquidity-summary-card {
+    padding: 32px;
+
+    border: 1px solid var(--borderColor);
+    border-radius: 24px;
+}
+
+.liquidity-summary-card-cols {
+    margin-bottom: 24px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.liquidity-summary-card-col {
+    text-align: center;
+}
+
+.liquidity-summary-card-col__value {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.liquidity-summary-card-col__name {
+    margin-top: 8px;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
 }
