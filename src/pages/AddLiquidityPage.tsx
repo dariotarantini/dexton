@@ -1,13 +1,15 @@
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import InputRange from 'react-input-range';
 import PageBackIcon from '../icons/PageBackIcon';
 import AddLiquidityPageHistoryIcon from '../icons/AddLiquidityPageHistoryIcon';
 import AddLiquidityPagePreferencesIcon from '../icons/AddLiquidityPagePreferencesIcon';
 import TokenAmountInput from '../components/common/TokenAmountInput/TokenAmountInput';
-import SelectCommissionCard from '../components/cards/SelectCommisionCard/SelectCommissionCard';
+import FeeCard from '../components/cards/SelectCommisionCard/FeeCard';
 import { Token } from '../store/features/types';
 import Button from '../components/common/Button/Button';
+import SelectFeeModal from '../components/modals/SelectFeeModal/SelectFeeModal';
+import { useOpenModal } from '../store/features/modals/modalsSlice';
 
 function DuckArt() {
   return (
@@ -1125,11 +1127,15 @@ function PlusIcon() {
 }
 
 function AddLiquidityPage() {
+  const openModal = useOpenModal();
+
   const [fromToken, setFromToken] = useState<Token | null>(null);
   const [toToken, setToToken] = useState<Token | null>(null);
 
   const [minPrice, setMinPrice] = useState<null | number>(350);
   const [maxPrice, setMaxPrice] = useState<null | number>(1200);
+
+  const [fee, setFee] = useState(0.5);
 
   return (
     <div className="page">
@@ -1178,7 +1184,16 @@ function AddLiquidityPage() {
               </div>
 
               <div className="page-block__content">
-                <SelectCommissionCard/>
+                <FeeCard
+                  amount={fee}
+                  onClick={() => openModal(({ closeModal }) => (
+                    <SelectFeeModal
+                      active={fee}
+                      closeModal={closeModal}
+                      onChange={(amount) => setFee(amount)}
+                    />
+                  ))}
+                />
               </div>
             </div>
           </div>
@@ -1267,8 +1282,6 @@ function AddLiquidityPage() {
                         value={maxPrice ?? ''}
                         onChange={(event) => {
                           const { value } = event.currentTarget;
-
-                          console.log(value);
 
                           if (!value.length) {
                             setMaxPrice(null);
