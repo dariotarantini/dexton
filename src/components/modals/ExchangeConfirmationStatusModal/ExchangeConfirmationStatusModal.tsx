@@ -3,8 +3,8 @@ import Lottie from 'lottie-react';
 import { CloseModal } from '../../../store/features/modals/modalsSlice';
 import { Token } from '../../../store/features/types';
 import Modal from '../../common/Modal/Modal';
-import waitJson from '../../../assets/wait.json';
-import okJson from '../../../assets/ok.json';
+import waitJson from '../../../assets/DUCK4_THINK_OUT.json';
+import okJson from '../../../assets/DUCK13_LIKE_OUT.json';
 import Button from '../../common/Button/Button';
 import './ExchangeConfirmationStatusModal.scss';
 
