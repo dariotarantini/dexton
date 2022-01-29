@@ -1,3 +1,6 @@
+@import '~react-input-range/lib/css/index.css';
+
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
@@ -353,6 +356,7 @@ h1 {
     justify-content: center;
 
     background-color: var(--accentLightColor);
+    border: none;
     border-radius: 14px;
 
     color: var(--accentColor);
@@ -408,4 +412,51 @@ h1 {
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
+}
+
+.page-block__content--range {
+    margin-bottom: 60px;
+}
+
+.input-range__slider {
+    background: white;
+    border: 3px solid var(--accentColor);
+    height: 15px;
+    width: 15px;
+    transition: transform 0.1s ease-out, box-shadow 0.1s ease-out;
+    cursor: grab;
+
+    &:active {
+        cursor: grabbing !important;
+    }
+}
+
+.input-range__track {
+    background: var(--borderColor);
+    border-radius: 33px;
+    height: 5px;
+}
+
+.input-range__track--active {
+    background: var(--accentColor);
+    height: 5px;
+}
+
+.input-range__label {
+    color: var(--defaultTextColor);
+
+    font-family: 'Mulish', sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 18px;
+}
+
+.input-range__label--min,
+.input-range__label--max {
+    bottom: -28px;
+    display: none;
+}
+
+.input-range__label--value {
+    top: 16px;
 }

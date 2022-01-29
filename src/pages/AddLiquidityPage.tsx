@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import InputRange from 'react-input-range';
 import PageBackIcon from '../icons/PageBackIcon';
 import AddLiquidityPageHistoryIcon from '../icons/AddLiquidityPageHistoryIcon';
 import AddLiquidityPagePreferencesIcon from '../icons/AddLiquidityPagePreferencesIcon';
@@ -1089,9 +1090,46 @@ function DuckArt() {
   );
 }
 
+function MinusIcon() {
+  return (
+    <svg
+      width="16"
+      height="2"
+      viewBox="0 0 16 2"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M15 0H1C0.734784 0 0.48043 0.105357 0.292893 0.292893C0.105357 0.48043 0 0.734784 0 1C0 1.26522 0.105357 1.51957 0.292893 1.70711C0.48043 1.89464 0.734784 2 1 2H15C15.2652 2 15.5196 1.89464 15.7071 1.70711C15.8946 1.51957 16 1.26522 16 1C16 0.734784 15.8946 0.48043 15.7071 0.292893C15.5196 0.105357 15.2652 0 15 0Z"
+        fill="#0088CC"
+      />
+    </svg>
+  );
+}
+
+function PlusIcon() {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 16 16"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M15 7H9V1C9 0.734784 8.89464 0.48043 8.70711 0.292893C8.51957 0.105357 8.26522 0 8 0C7.73478 0 7.48043 0.105357 7.29289 0.292893C7.10536 0.48043 7 0.734784 7 1V7H1C0.734784 7 0.48043 7.10536 0.292893 7.29289C0.105357 7.48043 0 7.73478 0 8C0 8.26522 0.105357 8.51957 0.292893 8.70711C0.48043 8.89464 0.734784 9 1 9H7V15C7 15.2652 7.10536 15.5196 7.29289 15.7071C7.48043 15.8946 7.73478 16 8 16C8.26522 16 8.51957 15.8946 8.70711 15.7071C8.89464 15.5196 9 15.2652 9 15V9H15C15.2652 9 15.5196 8.89464 15.7071 8.70711C15.8946 8.51957 16 8.26522 16 8C16 7.73478 15.8946 7.48043 15.7071 7.29289C15.5196 7.10536 15.2652 7 15 7Z"
+        fill="#0088CC"
+      />
+    </svg>
+  );
+}
+
 function AddLiquidityPage() {
   const [fromToken, setFromToken] = useState<Token | null>(null);
   const [toToken, setToToken] = useState<Token | null>(null);
+
+  const [minPrice, setMinPrice] = useState<null | number>(350);
+  const [maxPrice, setMaxPrice] = useState<null | number>(1200);
 
   return (
     <div className="page">
@@ -1158,8 +1196,22 @@ function AddLiquidityPage() {
                   Select Price Range
                 </div>
 
-                <div className="page-block__content">
-                  ...
+                <div className="page-block__content page-block__content--range">
+                  <InputRange
+                    step={1}
+                    maxValue={1500}
+                    minValue={0}
+                    value={{
+                      min: minPrice ?? 0,
+                      max: maxPrice ?? 0,
+                    }}
+                    onChange={(value) => {
+                      if (typeof value === 'object') {
+                        setMinPrice(value.min);
+                        setMaxPrice(value.max);
+                      }
+                    }}
+                  />
                 </div>
               </div>
               <div className="page-block liquidity-prices">
@@ -1169,37 +1221,33 @@ function AddLiquidityPage() {
                   </div>
 
                   <div className="liquidity-price-card">
-                    <div className="liquidity-price-card__button">
-                      <svg
-                        width="16"
-                        height="2"
-                        viewBox="0 0 16 2"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M15 0H1C0.734784 0 0.48043 0.105357 0.292893 0.292893C0.105357 0.48043 0 0.734784 0 1C0 1.26522 0.105357 1.51957 0.292893 1.70711C0.48043 1.89464 0.734784 2 1 2H15C15.2652 2 15.5196 1.89464 15.7071 1.70711C15.8946 1.51957 16 1.26522 16 1C16 0.734784 15.8946 0.48043 15.7071 0.292893C15.5196 0.105357 15.2652 0 15 0Z"
-                          fill="#0088CC"
-                        />
-                      </svg>
-                    </div>
+                    <button
+                      className="liquidity-price-card__button"
+                      onClick={() => setMinPrice((minPrice || 1) - 1)}
+                    >
+                      <MinusIcon/>
+                    </button>
                     <div className="liquidity-price-card__amount">
-                      <input value={32} type="number"/>
+                      <input
+                        value={minPrice ?? ''}
+                        onChange={(event) => {
+                          const { value } = event.currentTarget;
+
+                          if (!value.length) {
+                            setMinPrice(null);
+                          } else {
+                            setMinPrice(Number(value));
+                          }
+                        }}
+                        type="number"
+                      />
                     </div>
-                    <div className="liquidity-price-card__button">
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M15 7H9V1C9 0.734784 8.89464 0.48043 8.70711 0.292893C8.51957 0.105357 8.26522 0 8 0C7.73478 0 7.48043 0.105357 7.29289 0.292893C7.10536 0.48043 7 0.734784 7 1V7H1C0.734784 7 0.48043 7.10536 0.292893 7.29289C0.105357 7.48043 0 7.73478 0 8C0 8.26522 0.105357 8.51957 0.292893 8.70711C0.48043 8.89464 0.734784 9 1 9H7V15C7 15.2652 7.10536 15.5196 7.29289 15.7071C7.48043 15.8946 7.73478 16 8 16C8.26522 16 8.51957 15.8946 8.70711 15.7071C8.89464 15.5196 9 15.2652 9 15V9H15C15.2652 9 15.5196 8.89464 15.7071 8.70711C15.8946 8.51957 16 8.26522 16 8C16 7.73478 15.8946 7.48043 15.7071 7.29289C15.5196 7.10536 15.2652 7 15 7Z"
-                          fill="#0088CC"
-                        />
-                      </svg>
-                    </div>
+                    <button
+                      className="liquidity-price-card__button"
+                      onClick={() => setMinPrice((minPrice || 0) + 1)}
+                    >
+                      <PlusIcon/>
+                    </button>
                   </div>
                 </div>
                 <div className="liquidity-price">
@@ -1208,37 +1256,35 @@ function AddLiquidityPage() {
                   </div>
 
                   <div className="liquidity-price-card">
-                    <div className="liquidity-price-card__button">
-                      <svg
-                        width="16"
-                        height="2"
-                        viewBox="0 0 16 2"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M15 0H1C0.734784 0 0.48043 0.105357 0.292893 0.292893C0.105357 0.48043 0 0.734784 0 1C0 1.26522 0.105357 1.51957 0.292893 1.70711C0.48043 1.89464 0.734784 2 1 2H15C15.2652 2 15.5196 1.89464 15.7071 1.70711C15.8946 1.51957 16 1.26522 16 1C16 0.734784 15.8946 0.48043 15.7071 0.292893C15.5196 0.105357 15.2652 0 15 0Z"
-                          fill="#0088CC"
-                        />
-                      </svg>
-                    </div>
+                    <button
+                      className="liquidity-price-card__button"
+                      onClick={() => setMaxPrice((maxPrice || 1) - 1)}
+                    >
+                      <MinusIcon/>
+                    </button>
                     <div className="liquidity-price-card__amount">
-                      <input value={323} type="number"/>
+                      <input
+                        value={maxPrice ?? ''}
+                        onChange={(event) => {
+                          const { value } = event.currentTarget;
+
+                          console.log(value);
+
+                          if (!value.length) {
+                            setMaxPrice(null);
+                          } else {
+                            setMaxPrice(Number(value));
+                          }
+                        }}
+                        type="number"
+                      />
                     </div>
-                    <div className="liquidity-price-card__button">
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 16 16"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M15 7H9V1C9 0.734784 8.89464 0.48043 8.70711 0.292893C8.51957 0.105357 8.26522 0 8 0C7.73478 0 7.48043 0.105357 7.29289 0.292893C7.10536 0.48043 7 0.734784 7 1V7H1C0.734784 7 0.48043 7.10536 0.292893 7.29289C0.105357 7.48043 0 7.73478 0 8C0 8.26522 0.105357 8.51957 0.292893 8.70711C0.48043 8.89464 0.734784 9 1 9H7V15C7 15.2652 7.10536 15.5196 7.29289 15.7071C7.48043 15.8946 7.73478 16 8 16C8.26522 16 8.51957 15.8946 8.70711 15.7071C8.89464 15.5196 9 15.2652 9 15V9H15C15.2652 9 15.5196 8.89464 15.7071 8.70711C15.8946 8.51957 16 8.26522 16 8C16 7.73478 15.8946 7.48043 15.7071 7.29289C15.5196 7.10536 15.2652 7 15 7Z"
-                          fill="#0088CC"
-                        />
-                      </svg>
-                    </div>
+                    <button
+                      className="liquidity-price-card__button"
+                      onClick={() => setMaxPrice((maxPrice || 0) + 1)}
+                    >
+                      <PlusIcon/>
+                    </button>
                   </div>
                 </div>
               </div>
