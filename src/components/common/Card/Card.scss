@@ -44,3 +44,55 @@
 .card__head + .card__body {
     margin-top: 24px;
 }
+
+.card-table {
+    width: 100%;
+
+    .card-table__row {
+        width: 100%;
+
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .card-table__col {
+        display: flex;
+        align-items: center;
+
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .card-table__col:nth-child(1) {
+        width: 40%;
+    }
+
+    .card-table__col:not(:nth-child(1)) {
+        width: 120px;
+    }
+
+    .card-table__row:first-child {
+        .card-table__col {
+            font-weight: bold;
+            font-size: 16px;
+            line-height: 20px;
+
+            color: rgba(48, 55, 87, 0.85);
+        }
+    }
+
+    .card-table__row + .card-table__row {
+        margin-top: 32px;
+    }
+}
+
+.card-table-pagination {
+    margin-top: 32px;
+}
+
+.card-table-pagination__info {
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+}

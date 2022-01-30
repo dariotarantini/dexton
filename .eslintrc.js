@@ -35,6 +35,7 @@ module.exports = {
     'no-unused-vars': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
+    'no-nested-ternary': 'off',
   },
   settings: {
     'import/resolver': {

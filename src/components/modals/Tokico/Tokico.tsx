@@ -10,6 +10,10 @@ function Tokico({
   fromToken,
   toToken,
 }: TokicoProps) {
+  if (!fromToken || !toToken) {
+    return null;
+  }
+
   return (
     <div className="tokico">
       <img src={fromToken.icon} alt={fromToken.symbol}/>

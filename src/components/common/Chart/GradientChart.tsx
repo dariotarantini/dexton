@@ -15,6 +15,7 @@ import {
   Tooltip,
 } from 'chart.js';
 import { Chart as ReactChart } from 'react-chartjs-2';
+import Zoom from 'chartjs-plugin-zoom';
 import { animationDuration } from '../../../styleProps';
 import { PriceAtTime } from '../../../store/features/tokens/tokensSlice';
 
@@ -27,6 +28,7 @@ ChartJS.register(
   Tooltip,
   Legend,
   Filler,
+  Zoom,
 );
 ChartJS.register(...registerables);
 
@@ -53,7 +55,8 @@ interface GradientChartProps {
   height: number;
   scalesX?: boolean;
   date?: boolean;
-  color?: 'green' | 'red';
+  color?: 'green' | 'red' | 'blue';
+  type?: 'bar' | 'line';
 }
 
 function GradientChart({
@@ -63,12 +66,19 @@ function GradientChart({
   scalesX = false,
   date = false,
   color = 'red',
+  type = 'line',
 }: GradientChartProps) {
   const chartRef = useRef<ChartJS | null>(null);
-  const [chartData, setChartData] = useState<{ data: ChartData<'line'>, options: ChartOptions<'line'> }>({
+  const [chartData, setChartData] = useState<{ data: ChartData<'line' | 'bar'>, options: ChartOptions<'line' | 'bar'> }>({
     data: { datasets: [] },
     options: {},
   });
+
+  const borderColor = {
+    red: '#FF4954',
+    green: '#0EA45C',
+    blue: '#0088CC',
+  }[color];
 
   useEffect(() => {
     const chart = chartRef.current;
@@ -90,9 +100,10 @@ function GradientChart({
           {
             data,
             fill: true,
-            backgroundColor: createGradient(chart.ctx, scalesX ? height - 25 : height, color === 'red' ? '#FF4954' : '#0EA45C'),
-            borderWidth: scalesX ? 2 : 1.5,
-            borderColor: color === 'red' ? '#FF4954' : '#0EA45C',
+            backgroundColor: type === 'bar' ? borderColor : createGradient(chart.ctx, scalesX ? height - 25 : height, borderColor),
+            borderWidth: type === 'bar' ? 0 : scalesX ? 2 : 1.5,
+            borderColor,
+            borderRadius: 8,
             pointRadius: 0,
             tension: 0.5,
           },
@@ -101,14 +112,33 @@ function GradientChart({
       options: {
         plugins: {
           legend: { display: false },
-          tooltip: { enabled: false },
+          tooltip: {
+            enabled: true,
+            mode: 'index',
+            intersect: false,
+          },
+          zoom: {
+            zoom: {
+              wheel: {
+                enabled: true,
+              },
+              pinch: {
+                enabled: true,
+              },
+              mode: 'x',
+            },
+            pan: {
+              enabled: true,
+              mode: 'x',
+            },
+          },
         },
         scales: {
           y: { display: false },
           xAxis: {
             labels,
             ticks: {
-              count: 4,
+              count: type === 'bar' ? undefined : 4,
               stepSize: 10,
               sampleSize: 10,
               autoSkip: true,
@@ -134,6 +164,10 @@ function GradientChart({
         animation: {
           duration: animationDuration * 2,
         },
+        hover: {
+          mode: 'nearest',
+          intersect: true,
+        },
       },
     });
   }, [chartRef, items]);
@@ -146,7 +180,7 @@ function GradientChart({
       height={height}
       options={chartData.options}
       data={chartData.data}
-      type="line"
+      type={type}
     />
   );
 }

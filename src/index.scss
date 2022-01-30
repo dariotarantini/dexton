@@ -472,3 +472,29 @@ h1 {
 .input-range__label--value {
     top: 16px;
 }
+
+.page-charts {
+    display: grid;
+    grid-template-columns: .5fr .5fr;
+    grid-gap: 25px;
+}
+
+.chart-card__label {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--mutedTextColor);
+}
+
+.chart-card__value {
+    margin-top: 6px;
+
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 30px;
+}
+
+.chart-card__chart {
+    margin-top: 24px;
+}
