@@ -7,7 +7,7 @@ interface ModalProps {
   closeModal?: () => void,
   bodyClassName?: string,
   modalClassName?: string,
-  title?: string,
+  title?: React.ReactNode,
 }
 
 function Modal({

@@ -89,8 +89,8 @@ function GradientChart({
         datasets: [
           {
             data,
-            // fill: true,
-            // backgroundColor: createGradient(chart.ctx, scalesX ? height - 25 : height, color === 'red' ? '#FF4954' : '#0EA45C'),
+            fill: true,
+            backgroundColor: createGradient(chart.ctx, scalesX ? height - 25 : height, color === 'red' ? '#FF4954' : '#0EA45C'),
             borderWidth: scalesX ? 2 : 1.5,
             borderColor: color === 'red' ? '#FF4954' : '#0EA45C',
             pointRadius: 0,

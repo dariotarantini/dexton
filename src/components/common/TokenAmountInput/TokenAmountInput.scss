@@ -27,6 +27,16 @@
     }
 }
 
+.token-amount-input__amount__balance-value {
+    cursor: pointer;
+
+    transition: all var(--animationDuration) ease-in-out;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
 .token-amount-input__amount__input {
     margin-top: 8px;
 
@@ -67,8 +77,6 @@
 }
 
 .token-amount-input__currency-select {
-    margin-top: 8px;
-
     padding: 0;
 
     display: flex;

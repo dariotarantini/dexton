@@ -1,0 +1,29 @@
+.add-liquidity-modal {
+    .token-amount-input__currency {
+        display: flex;
+        align-items: center;
+
+        pointer-events: none;
+    }
+
+    .token-amount-input__currency-select__arrow {
+        display: none;
+    }
+
+    .button {
+        margin-top: 32px;
+    }
+}
+
+.add-liquidity-modal__block-title {
+    margin-top: 24px;
+    margin-bottom: 16px;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--mutedTextColor);
+
+    text-align: center;
+}

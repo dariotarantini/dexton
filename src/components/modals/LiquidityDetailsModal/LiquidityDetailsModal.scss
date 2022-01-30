@@ -1,0 +1,16 @@
+.liquidity-details-modal {
+    .modal__footer {
+        display: grid;
+        grid-template-columns: .5fr .5fr;
+        grid-gap: 16px;
+    }
+}
+
+.liquidity-details-modal__title {
+    display: flex;
+    align-items: center;
+
+    .tag {
+        margin-left: 12px;
+    }
+}

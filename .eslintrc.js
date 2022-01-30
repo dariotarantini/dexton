@@ -34,6 +34,7 @@ module.exports = {
     'react/no-unstable-nested-components': 'off',
     'no-unused-vars': 'off',
     '@typescript-eslint/ban-ts-comment': 'off',
+    'jsx-a11y/no-static-element-interactions': 'off',
   },
   settings: {
     'import/resolver': {

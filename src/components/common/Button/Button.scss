@@ -72,8 +72,7 @@
 
     &:disabled {
         cursor: not-allowed;
-
-        background-color: var(--mutedTextColor);
+        opacity: .6;
     }
 
     &.button--inactive {

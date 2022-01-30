@@ -14,3 +14,8 @@ export interface Rate {
   price: number;
   reversePrice: number;
 }
+
+export interface LiquidityDetails {
+  from: { token: Token };
+  to: { token: Token };
+}

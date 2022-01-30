@@ -1,0 +1,28 @@
+.tokico {
+    display: flex;
+    align-items: center;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+
+    img {
+        width: 24px;
+        height: 24px;
+
+        background-color: white;
+
+        border-radius: 50%;
+
+        object-fit: cover;
+    }
+
+    img + img {
+        margin-left: -5px;
+        box-shadow: 0 0 0 2px white;
+    }
+
+    img:last-child {
+        margin-right: 8px;
+    }
+}

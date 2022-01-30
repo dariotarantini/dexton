@@ -3,7 +3,6 @@ import Modal from '../../common/Modal/Modal';
 import { CloseModal } from '../../../store/features/modals/modalsSlice';
 import FeeCard from '../../cards/SelectCommisionCard/FeeCard';
 import './SelectFeeModal.scss';
-import Tag from '../../common/Tag/Tag';
 
 interface SelectFeeModalProps {
   closeModal: CloseModal;

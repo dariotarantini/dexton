@@ -1,8 +1,14 @@
 import './LiquidityCard.scss';
 import ethIcon from '../../../assets/eth.png';
 import swapIcon from '../../../assets/swap.svg';
+import LiquidityDetailsModal from '../../modals/LiquidityDetailsModal/LiquidityDetailsModal';
+import { useOpenModal } from '../../../store/features/modals/modalsSlice';
+import { useAvailableTokens } from '../../../store/features/tokens/tokensSlice';
 
 function LiquidityCard() {
+  const openModal = useOpenModal();
+  const tokens = useAvailableTokens();
+
   return (
     <div className="liquidity-card">
       <div className="liquidity-card__pair">
@@ -57,7 +63,24 @@ function LiquidityCard() {
         </div>
       </div>
 
-      <a className="liquidity-card__details-link" href="/liquidity">Details</a>
+      <button
+        onClick={() => openModal(({ closeModal }) => (
+          <LiquidityDetailsModal
+            closeModal={closeModal}
+            details={{
+              from: {
+                token: tokens.tokens[0],
+              },
+              to: {
+                token: tokens.tokens[1],
+              },
+            }}
+          />
+        ))}
+        className="liquidity-card__details-link"
+      >
+        Details
+      </button>
     </div>
   );
 }

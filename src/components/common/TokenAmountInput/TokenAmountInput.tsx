@@ -5,7 +5,7 @@ import { Token } from '../../../store/features/types';
 import { useTokenBalance, useWallet } from '../../../store/features/wallet/walletSlice';
 
 interface TokenAmountInputProps {
-  label: string;
+  label?: string;
   disabled?: boolean;
   token: Token | null;
   onChangeToken?: (token: Token) => void;
@@ -31,7 +31,20 @@ function TokenAmountInput({
     }
 
     if (token) {
-      return `Balance: ${tokenBalance} ${token?.symbol}`;
+      return (
+        <>
+          Balance:
+          {' '}
+          <span
+            className="token-amount-input__amount__balance-value"
+            onClick={() => onChangeValue && onChangeValue(String(tokenBalance))}
+          >
+            {tokenBalance}
+            {' '}
+            {token?.symbol}
+          </span>
+        </>
+      );
     }
 
     return 'Select token';
@@ -69,9 +82,13 @@ function TokenAmountInput({
         />
       </div>
       <div className="token-amount-input__currency">
-        <div className="token-amount-input__currency__label">
-          {label}
-        </div>
+        {
+          label && (
+            <div className="token-amount-input__currency__label">
+              {label}
+            </div>
+          )
+        }
         <button
           onClick={() => openModal(({ closeModal }: any) => (
             <SelectTokenModal

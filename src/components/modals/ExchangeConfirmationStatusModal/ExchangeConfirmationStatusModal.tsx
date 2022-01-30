@@ -11,10 +11,10 @@ import './ExchangeConfirmationStatusModal.scss';
 interface ExchangeConfirmationStatusModalProps {
   closeModal: CloseModal;
   closeConfirmModal: CloseModal;
-  fromToken: Token,
-  toToken: Token,
-  amount: number,
-  minReceived: number,
+  fromToken: Token;
+  toToken: Token;
+  amount: number;
+  minReceived: number;
 }
 
 function ExchangeConfirmationStatusModal({

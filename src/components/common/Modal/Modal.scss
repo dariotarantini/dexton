@@ -162,3 +162,66 @@
 .modal__tab + .modal__tab {
     margin-left: 8px;
 }
+
+.modal__footer {
+    margin-top: 32px;
+}
+
+.modal-nav {
+    margin-bottom: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-nav__back {
+    display: flex;
+    align-items: center;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--accentColor);
+
+    svg {
+        margin-right: 8px;
+    }
+}
+
+.modal-nav__title {
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+}
+
+.modal-items {
+
+}
+
+.modal-items--summary {
+    margin-top: 32px;
+}
+
+.modal-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.modal-item__name {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.modal-item__value {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.modal-item + .modal-item {
+    margin-top: 16px;
+}

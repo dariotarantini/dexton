@@ -132,6 +132,8 @@
 }
 
 .liquidity-card__details-link {
+    all: unset;
+
     margin-left: auto;
 
     font-weight: bold;
@@ -143,6 +145,8 @@
     text-decoration: none;
 
     transition: all var(--animationDuration) ease-in-out;
+
+    cursor: pointer;
 
     &:hover {
         color: var(--accentColorActive);
