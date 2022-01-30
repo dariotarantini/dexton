@@ -147,6 +147,27 @@ h4 {
     }
 }
 
+.subpage-title {
+    margin-left: 32px;
+
+    display: flex;
+    align-items: center;
+
+    font-weight: 800;
+    font-size: 19px;
+    line-height: 24px;
+
+    .tag {
+        margin-left: 14px;
+    }
+}
+
+.page-head--pool {
+    .page-toolbar {
+        margin-left: auto;
+    }
+}
+
 .page-content {
     margin-top: 32px;
 }
@@ -273,7 +294,9 @@ h4 {
 }
 
 .page-toolbar {
-    button {
+    display: flex;
+
+    .page-toolbar__icon-button {
         padding: 0;
         background-color: transparent;
         border: none;
@@ -281,7 +304,11 @@ h4 {
         cursor: pointer;
     }
 
-    button + button {
+    .page-toolbar__icon-button + .page-toolbar__icon-button {
+        margin-left: 16px;
+    }
+
+    .button + .button {
         margin-left: 16px;
     }
 }

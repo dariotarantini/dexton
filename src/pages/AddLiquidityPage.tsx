@@ -1148,10 +1148,10 @@ function AddLiquidityPage() {
           Add liquidity
         </h1>
         <div className="page-toolbar">
-          <button>
+          <button className="page-toolbar__icon-button">
             <AddLiquidityPageHistoryIcon/>
           </button>
-          <button>
+          <button className="page-toolbar__icon-button">
             <AddLiquidityPagePreferencesIcon/>
           </button>
         </div>

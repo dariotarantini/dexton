@@ -70,6 +70,15 @@
 
     .card-table__col:nth-child(1) {
         width: 40%;
+
+        cursor: pointer;
+
+        text-decoration: none;
+        color: var(--defaultTextColor);
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     .card-table__col:not(:nth-child(1)) {

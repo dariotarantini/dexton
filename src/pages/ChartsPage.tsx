@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Card from '../components/common/Card/Card';
 import GradientChart from '../components/common/Chart/GradientChart';
 import Tokico from '../components/modals/Tokico/Tokico';
@@ -104,7 +105,10 @@ function ChartsPage() {
                   <div className="card-table__col">Fees 1Day</div>
                 </div>
                 <div className="card-table__row">
-                  <div className="card-table__col">
+                  <Link
+                    to={`/charts/${tokens.tokens[0].symbol}-${tokens.tokens[1].symbol}`}
+                    className="card-table__col"
+                  >
                     <Tokico
                       fromToken={tokens.tokens[0]}
                       toToken={tokens.tokens[1]}
@@ -113,18 +117,21 @@ function ChartsPage() {
                     <Tag color="blue">
                       1%
                     </Tag>
-                  </div>
+                  </Link>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
                 </div>
                 <div className="card-table__row">
-                  <div className="card-table__col">
+                  <Link
+                    to={`/charts/${tokens.tokens[0].symbol}-${tokens.tokens[1].symbol}`}
+                    className="card-table__col"
+                  >
                     <Tokico
                       fromToken={tokens.tokens[0]}
                       toToken={tokens.tokens[1]}
                     />
-                  </div>
+                  </Link>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
@@ -149,67 +156,85 @@ function ChartsPage() {
                   <div className="card-table__col">Fees 1Day</div>
                 </div>
                 <div className="card-table__row">
-                  <div className="card-table__col">
+                  <Link
+                    to={`/charts/${tokens.tokens[0].symbol}-${tokens.tokens[1].symbol}`}
+                    className="card-table__col"
+                  >
                     <Tokico
                       fromToken={tokens.tokens[0]}
                       toToken={tokens.tokens[1]}
                     />
-                  </div>
+                  </Link>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
                 </div>
                 <div className="card-table__row">
-                  <div className="card-table__col">
+                  <Link
+                    to={`/charts/${tokens.tokens[0].symbol}-${tokens.tokens[1].symbol}`}
+                    className="card-table__col"
+                  >
                     <Tokico
                       fromToken={tokens.tokens[0]}
                       toToken={tokens.tokens[1]}
                     />
-                  </div>
+                  </Link>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
                 </div>
                 <div className="card-table__row">
-                  <div className="card-table__col">
+                  <Link
+                    to={`/charts/${tokens.tokens[0].symbol}-${tokens.tokens[1].symbol}`}
+                    className="card-table__col"
+                  >
                     <Tokico
                       fromToken={tokens.tokens[0]}
                       toToken={tokens.tokens[1]}
                     />
-                  </div>
+                  </Link>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
                 </div>
                 <div className="card-table__row">
-                  <div className="card-table__col">
+                  <Link
+                    to={`/charts/${tokens.tokens[0].symbol}-${tokens.tokens[1].symbol}`}
+                    className="card-table__col"
+                  >
                     <Tokico
                       fromToken={tokens.tokens[0]}
                       toToken={tokens.tokens[1]}
                     />
-                  </div>
+                  </Link>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
                 </div>
                 <div className="card-table__row">
-                  <div className="card-table__col">
+                  <Link
+                    to={`/charts/${tokens.tokens[0].symbol}-${tokens.tokens[1].symbol}`}
+                    className="card-table__col"
+                  >
                     <Tokico
                       fromToken={tokens.tokens[0]}
                       toToken={tokens.tokens[1]}
                     />
-                  </div>
+                  </Link>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
                 </div>
                 <div className="card-table__row">
-                  <div className="card-table__col">
+                  <Link
+                    to={`/charts/${tokens.tokens[0].symbol}-${tokens.tokens[1].symbol}`}
+                    className="card-table__col"
+                  >
                     <Tokico
                       fromToken={tokens.tokens[0]}
                       toToken={tokens.tokens[1]}
                     />
-                  </div>
+                  </Link>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>

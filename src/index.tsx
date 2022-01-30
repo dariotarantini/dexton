@@ -17,6 +17,7 @@ import ChartsPage from './pages/ChartsPage';
 import { animationDuration, setStyleProps } from './styleProps';
 import { useActiveModals, useCloseModal } from './store/features/modals/modalsSlice';
 import AddLiquidityPage from './pages/AddLiquidityPage';
+import ChartsPoolPage from './pages/ChartsPoolPage';
 
 setStyleProps();
 enableMapSet();
@@ -48,6 +49,7 @@ function AnimatedSwitch() {
             <Route path="/liquidity" element={<LiquidityPage/>}/>
             <Route path="/liquidity/add" element={<AddLiquidityPage/>}/>
             <Route path="/charts" element={<ChartsPage/>}/>
+            <Route path="/charts/:pair" element={<ChartsPoolPage/>}/>
           </Routes>
         </CSSTransition>
       </TransitionGroup>

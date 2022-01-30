@@ -16,6 +16,7 @@
     "chart.js": "^3.7.0",
     "chartjs-plugin-zoom": "^1.2.0",
     "faker": "^6.6.6",
+    "history": "^5.2.0",
     "immer": "^9.0.12",
     "lottie-react": "^2.2.1",
     "react": "^17.0.2",
