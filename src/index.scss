@@ -525,3 +525,74 @@ h1 {
 .chart-card__chart {
     margin-top: 24px;
 }
+
+.pool-page-charts {
+    display: grid;
+    grid-template-columns: 0.375fr 0.625fr;
+    grid-gap: 25px;
+}
+
+.pool-information-card {
+
+}
+
+.pool-information-card-items {
+
+}
+
+.pool-information-card-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pool-information-card-item__name {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.pool-information-card-item__value {
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 24px;
+}
+
+.pool-information-card-item + .pool-information-card-item {
+    margin-top: 16px;
+}
+
+.pool-page-charts-info {
+    margin-top: 24px;
+
+    width: 100%;
+
+    padding: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    border: 1px solid var(--borderColor);
+    border-radius: 14px;
+}
+
+.pool-page-charts-info__left,
+.pool-page-charts-info__right {
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+}
+
+.pool-page-charts-info__divider {
+    height: 24px;
+    width: 1px;
+
+    background-color: var(--borderColor);
+}

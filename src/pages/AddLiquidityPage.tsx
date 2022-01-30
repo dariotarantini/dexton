@@ -1190,6 +1190,7 @@ function AddLiquidityPage() {
 
               <div className="page-block__content">
                 <FeeCard
+                  disabled={!fromToken || !toToken}
                   amount={fee}
                   onClick={() => openModal(({ closeModal }) => (
                     <SelectFeeModal

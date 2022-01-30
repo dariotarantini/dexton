@@ -6,7 +6,7 @@ import { useAvailableTokens } from '../store/features/tokens/tokensSlice';
 import Tag from '../components/common/Tag/Tag';
 
 function ChartsPage() {
-  const tokens = useAvailableTokens();
+  const { tokens } = useAvailableTokens();
 
   return (
     <div className="page">
@@ -106,12 +106,12 @@ function ChartsPage() {
                 </div>
                 <div className="card-table__row">
                   <Link
-                    to={`/charts/${tokens.tokens[0].symbol}-${tokens.tokens[1].symbol}`}
+                    to={`/charts/${tokens[0].symbol}-${tokens[1].symbol}`}
                     className="card-table__col"
                   >
                     <Tokico
-                      fromToken={tokens.tokens[0]}
-                      toToken={tokens.tokens[1]}
+                      fromToken={tokens[0]}
+                      toToken={tokens[1]}
                     />
 
                     <Tag color="blue">
@@ -124,12 +124,12 @@ function ChartsPage() {
                 </div>
                 <div className="card-table__row">
                   <Link
-                    to={`/charts/${tokens.tokens[0].symbol}-${tokens.tokens[1].symbol}`}
+                    to={`/charts/${tokens[0].symbol}-${tokens[1].symbol}`}
                     className="card-table__col"
                   >
                     <Tokico
-                      fromToken={tokens.tokens[0]}
-                      toToken={tokens.tokens[1]}
+                      fromToken={tokens[0]}
+                      toToken={tokens[1]}
                     />
                   </Link>
                   <div className="card-table__col">$512.12m</div>
@@ -157,12 +157,12 @@ function ChartsPage() {
                 </div>
                 <div className="card-table__row">
                   <Link
-                    to={`/charts/${tokens.tokens[0].symbol}-${tokens.tokens[1].symbol}`}
+                    to={`/charts/${tokens[0].symbol}-${tokens[1].symbol}`}
                     className="card-table__col"
                   >
                     <Tokico
-                      fromToken={tokens.tokens[0]}
-                      toToken={tokens.tokens[1]}
+                      fromToken={tokens[0]}
+                      toToken={tokens[1]}
                     />
                   </Link>
                   <div className="card-table__col">$512.12m</div>
@@ -171,12 +171,12 @@ function ChartsPage() {
                 </div>
                 <div className="card-table__row">
                   <Link
-                    to={`/charts/${tokens.tokens[0].symbol}-${tokens.tokens[1].symbol}`}
+                    to={`/charts/${tokens[0].symbol}-${tokens[1].symbol}`}
                     className="card-table__col"
                   >
                     <Tokico
-                      fromToken={tokens.tokens[0]}
-                      toToken={tokens.tokens[1]}
+                      fromToken={tokens[0]}
+                      toToken={tokens[1]}
                     />
                   </Link>
                   <div className="card-table__col">$512.12m</div>
@@ -185,12 +185,12 @@ function ChartsPage() {
                 </div>
                 <div className="card-table__row">
                   <Link
-                    to={`/charts/${tokens.tokens[0].symbol}-${tokens.tokens[1].symbol}`}
+                    to={`/charts/${tokens[0].symbol}-${tokens[1].symbol}`}
                     className="card-table__col"
                   >
                     <Tokico
-                      fromToken={tokens.tokens[0]}
-                      toToken={tokens.tokens[1]}
+                      fromToken={tokens[0]}
+                      toToken={tokens[1]}
                     />
                   </Link>
                   <div className="card-table__col">$512.12m</div>
@@ -199,12 +199,12 @@ function ChartsPage() {
                 </div>
                 <div className="card-table__row">
                   <Link
-                    to={`/charts/${tokens.tokens[0].symbol}-${tokens.tokens[1].symbol}`}
+                    to={`/charts/${tokens[0].symbol}-${tokens[1].symbol}`}
                     className="card-table__col"
                   >
                     <Tokico
-                      fromToken={tokens.tokens[0]}
-                      toToken={tokens.tokens[1]}
+                      fromToken={tokens[0]}
+                      toToken={tokens[1]}
                     />
                   </Link>
                   <div className="card-table__col">$512.12m</div>
@@ -213,12 +213,12 @@ function ChartsPage() {
                 </div>
                 <div className="card-table__row">
                   <Link
-                    to={`/charts/${tokens.tokens[0].symbol}-${tokens.tokens[1].symbol}`}
+                    to={`/charts/${tokens[0].symbol}-${tokens[1].symbol}`}
                     className="card-table__col"
                   >
                     <Tokico
-                      fromToken={tokens.tokens[0]}
-                      toToken={tokens.tokens[1]}
+                      fromToken={tokens[0]}
+                      toToken={tokens[1]}
                     />
                   </Link>
                   <div className="card-table__col">$512.12m</div>
@@ -227,12 +227,12 @@ function ChartsPage() {
                 </div>
                 <div className="card-table__row">
                   <Link
-                    to={`/charts/${tokens.tokens[0].symbol}-${tokens.tokens[1].symbol}`}
+                    to={`/charts/${tokens[0].symbol}-${tokens[1].symbol}`}
                     className="card-table__col"
                   >
                     <Tokico
-                      fromToken={tokens.tokens[0]}
-                      toToken={tokens.tokens[1]}
+                      fromToken={tokens[0]}
+                      toToken={tokens[1]}
                     />
                   </Link>
                   <div className="card-table__col">$512.12m</div>

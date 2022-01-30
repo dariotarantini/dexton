@@ -3,10 +3,11 @@ import React from 'react';
 import Tag from '../../common/Tag/Tag';
 
 interface FeeCardProps {
-  amount: 0.01 | 0.05 | 0.5 | 1 | number;
+  amount?: 0.01 | 0.05 | 0.5 | 1 | number;
   onClick?: () => void;
   editIcon?: boolean;
   checkIcon?: boolean;
+  disabled?: boolean;
 }
 
 function CheckIcon() {
@@ -25,6 +26,7 @@ function FeeCard({
   onClick,
   editIcon = true,
   checkIcon = false,
+  disabled = false,
 }: FeeCardProps) {
   const tags = {
     0.01: [
@@ -50,24 +52,28 @@ function FeeCard({
         0% select
       </Tag>,
     ],
-  }[amount];
+  }[amount || 0.5];
 
   return (
     <button
-      className={['fee-card', checkIcon ? 'fee-card--active' : ''].join(' ')}
+      className={['fee-card', checkIcon ? 'fee-card--active' : '', disabled ? 'fee-card--disabled' : ''].join(' ')}
       onClick={onClick ? () => onClick() : undefined}
     >
-      {amount}
-      %
+      {!disabled ? (
+        <>
+          {amount}
+          %
 
-      {tags}
+          {tags}
 
-      <span
-        className="fee-card__edit"
-      >
-        {editIcon && 'Edit'}
-        {checkIcon && <CheckIcon/>}
-      </span>
+          <span
+            className="fee-card__edit"
+          >
+            {editIcon && 'Edit'}
+            {checkIcon && <CheckIcon/>}
+          </span>
+        </>
+      ) : <div/>}
     </button>
   );
 }

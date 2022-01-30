@@ -69,3 +69,8 @@
         color: var(--accentColorActive);
     }
 }
+
+.fee-card--disabled {
+    pointer-events: none;
+    cursor: default;
+}
