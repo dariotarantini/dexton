@@ -73,12 +73,26 @@ function GradientChart({
     data: { datasets: [] },
     options: {},
   });
+  const [hover, setHover] = useState(false);
 
   const borderColor = {
     red: '#FF4954',
     green: '#0EA45C',
     blue: '#0088CC',
   }[color];
+
+  useEffect(() => {
+    const onMouseEnter = () => setHover(true);
+    const onMouseLeave = () => setHover(false);
+
+    chartRef.current?.canvas.addEventListener('mouseenter', onMouseEnter);
+    chartRef.current?.canvas.addEventListener('mouseleave', onMouseLeave);
+
+    return () => {
+      chartRef.current?.canvas.removeEventListener('mouseenter', onMouseEnter);
+      chartRef.current?.canvas.removeEventListener('mouseleave', onMouseLeave);
+    };
+  }, [chartRef]);
 
   useEffect(() => {
     const chart = chartRef.current;
@@ -104,8 +118,9 @@ function GradientChart({
             borderWidth: type === 'bar' ? 0 : scalesX ? 2 : 1.5,
             borderColor,
             borderRadius: 8,
-            pointRadius: 0,
+            pointRadius: hover ? 2 : 0,
             tension: 0.5,
+            borderSkipped: false,
           },
         ],
       },
@@ -121,8 +136,12 @@ function GradientChart({
             zoom: {
               wheel: {
                 enabled: true,
+                speed: 0.01,
               },
               pinch: {
+                enabled: true,
+              },
+              drag: {
                 enabled: true,
               },
               mode: 'x',
@@ -170,7 +189,7 @@ function GradientChart({
         },
       },
     });
-  }, [chartRef, items]);
+  }, [chartRef, items, hover]);
 
   return (
     <ReactChart

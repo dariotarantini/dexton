@@ -62,6 +62,10 @@
         font-weight: bold;
         font-size: 16px;
         line-height: 20px;
+
+        .tag {
+            margin-left: 12px;
+        }
     }
 
     .card-table__col:nth-child(1) {
@@ -89,10 +93,99 @@
 
 .card-table-pagination {
     margin-top: 32px;
+
+    display: flex;
+    align-items: center;
 }
 
 .card-table-pagination__info {
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
+
+    color: rgba(48, 55, 87, 0.85);
+}
+
+.card-table-pagination__pages {
+    margin-left: auto;
+
+    display: flex;
+    align-items: center;
+}
+
+.card-table-pagination__page {
+    all: unset;
+
+    width: 32px;
+    height: 32px;
+
+    color: var(--accentColor);
+
+    border-radius: 8px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+
+    cursor: pointer;
+
+    transition: all var(--animationDuration) ease-in-out;
+
+    &:not(&.card-table-pagination__page--active) {
+        &:hover {
+            background-color: var(--hoverColor);
+        }
+
+        &:active {
+            background-color: var(--activeColor);
+        }
+    }
+}
+
+.card-table-pagination__page--active {
+    background-color: var(--accentColor);
+    color: white;
+
+    cursor: default;
+}
+
+.card-table-pagination__page + .card-table-pagination__page {
+    margin-left: 8px;
+}
+
+.card-table-pagination__page-next,
+.card-table-pagination__page-prev {
+    all: unset;
+
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--accentColor);
+}
+
+.card-table-pagination__page-prev {
+    margin-right: 24px;
+
+    color: rgba(0, 136, 204, 0.5);
+}
+
+.card-table-pagination__page-next {
+    margin-left: 24px;
+
+    cursor: pointer;
+
+    transition: all var(--animationDuration) ease-in-out;
+
+    &:hover {
+        color: var(--accentColorActive);
+    }
+
+    &:active {
+        color: var(--accentColorActive);
+    }
 }

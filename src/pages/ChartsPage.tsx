@@ -2,6 +2,7 @@ import Card from '../components/common/Card/Card';
 import GradientChart from '../components/common/Chart/GradientChart';
 import Tokico from '../components/modals/Tokico/Tokico';
 import { useAvailableTokens } from '../store/features/tokens/tokensSlice';
+import Tag from '../components/common/Tag/Tag';
 
 function ChartsPage() {
   const tokens = useAvailableTokens();
@@ -90,6 +91,51 @@ function ChartsPage() {
 
         <div className="page-section">
           <h4 className="page-section__title">
+            Your Watchlist
+          </h4>
+
+          <div className="page-section__content">
+            <Card>
+              <div className="card-table">
+                <div className="card-table__row">
+                  <div className="card-table__col">Pool</div>
+                  <div className="card-table__col">TVL</div>
+                  <div className="card-table__col">Volume 1Day</div>
+                  <div className="card-table__col">Fees 1Day</div>
+                </div>
+                <div className="card-table__row">
+                  <div className="card-table__col">
+                    <Tokico
+                      fromToken={tokens.tokens[0]}
+                      toToken={tokens.tokens[1]}
+                    />
+
+                    <Tag color="blue">
+                      1%
+                    </Tag>
+                  </div>
+                  <div className="card-table__col">$512.12m</div>
+                  <div className="card-table__col">$512.12m</div>
+                  <div className="card-table__col">$512.12m</div>
+                </div>
+                <div className="card-table__row">
+                  <div className="card-table__col">
+                    <Tokico
+                      fromToken={tokens.tokens[0]}
+                      toToken={tokens.tokens[1]}
+                    />
+                  </div>
+                  <div className="card-table__col">$512.12m</div>
+                  <div className="card-table__col">$512.12m</div>
+                  <div className="card-table__col">$512.12m</div>
+                </div>
+              </div>
+            </Card>
+          </div>
+        </div>
+
+        <div className="page-section">
+          <h4 className="page-section__title">
             All Pools
           </h4>
 
@@ -167,6 +213,37 @@ function ChartsPage() {
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
                   <div className="card-table__col">$512.12m</div>
+                </div>
+              </div>
+
+              <div className="card-table-pagination">
+                <div className="card-table-pagination__info">
+                  Showing 1 to 10 of 349 pools
+                </div>
+
+                <div className="card-table-pagination__pages">
+                  <button className="card-table-pagination__page-prev">
+                    Previous
+                  </button>
+
+                  <button
+                    className="card-table-pagination__page card-table-pagination__page--active"
+                  >
+                    1
+                  </button>
+                  <button className="card-table-pagination__page">
+                    2
+                  </button>
+                  <button className="card-table-pagination__page">
+                    3
+                  </button>
+                  <button className="card-table-pagination__page">
+                    4
+                  </button>
+
+                  <button className="card-table-pagination__page-next">
+                    Next
+                  </button>
                 </div>
               </div>
             </Card>
