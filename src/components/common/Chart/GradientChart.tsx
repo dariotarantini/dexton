@@ -118,7 +118,7 @@ function GradientChart({
             borderWidth: type === 'bar' ? 0 : scalesX ? 2 : 1.5,
             borderColor,
             borderRadius: 8,
-            pointRadius: hover ? 2 : 0,
+            pointRadius: hover ? 0 : 0,
             tension: 0.5,
             borderSkipped: false,
           },
@@ -128,7 +128,7 @@ function GradientChart({
         plugins: {
           legend: { display: false },
           tooltip: {
-            enabled: true,
+            enabled: false,
             mode: 'index',
             intersect: false,
           },
