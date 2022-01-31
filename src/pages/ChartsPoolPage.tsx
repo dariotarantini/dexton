@@ -231,6 +231,9 @@ function ChartsPoolPage() {
                   >
                     0xC660...56dF
                   </a>
+                  <div className="card-table__col">
+                    now
+                  </div>
                 </div>
                 <div className="card-table__row">
                   <a
@@ -267,6 +270,9 @@ function ChartsPoolPage() {
                   >
                     0xC660...56dF
                   </a>
+                  <div className="card-table__col">
+                    now
+                  </div>
                 </div>
               </div>
             </Card>

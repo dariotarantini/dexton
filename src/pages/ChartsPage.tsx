@@ -52,7 +52,7 @@ function ChartsPage() {
               />
             </div>
           </Card>
-          <Card>
+          <Card className="chart-card">
             <div className="chart-card__label">
               Volume Day
             </div>

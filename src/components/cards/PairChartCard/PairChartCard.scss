@@ -118,8 +118,10 @@
 
 .pair-chart-card__chart {
     margin-top: 31px;
+    max-width: 100%;
 
     canvas {
         max-height: 208px;
+        max-width: 100%;
     }
 }

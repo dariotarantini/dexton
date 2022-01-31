@@ -811,4 +811,16 @@ h1 {
     .liquidity-price-card {
         width: 100% !important;
     }
+
+    .page-charts {
+        display: block;
+
+        .chart-card:nth-child(2) {
+            margin-top: 24px;
+        }
+
+        .card-table {
+            overflow-x: auto;
+        }
+    }
 }

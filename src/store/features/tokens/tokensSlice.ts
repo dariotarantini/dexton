@@ -46,6 +46,39 @@ const {
   setIsFetching,
 } = tokensSlice.actions;
 
+const availableTokens = [
+  {
+    symbol: 'TON',
+    name: 'Toncoin',
+    icon: tonconinIcon,
+    address: '',
+  },
+  {
+    symbol: 'ETH',
+    name: 'Ether',
+    icon: ethIcon,
+    address: '',
+  },
+  {
+    symbol: 'TUSD',
+    name: 'Dollar token',
+    icon: ethIcon,
+    address: '',
+  },
+  {
+    symbol: 'TUAH',
+    name: 'Hryvna token',
+    icon: ethIcon,
+    address: '',
+  },
+  {
+    symbol: 'TRUB',
+    name: 'Ruble token',
+    icon: ethIcon,
+    address: '',
+  },
+];
+
 export function useAvailableTokens() {
   const tokens = useSelector((state: RootState) => state.tokens.items);
   const isLoaded = useSelector((state: RootState) => state.tokens.isLoaded);
@@ -62,38 +95,7 @@ export function useAvailableTokens() {
   // }, [isLoaded]);
 
   return {
-    tokens: [
-      {
-        symbol: 'TON',
-        name: 'Toncoin',
-        icon: tonconinIcon,
-        address: '',
-      },
-      {
-        symbol: 'ETH',
-        name: 'Ether',
-        icon: ethIcon,
-        address: '',
-      },
-      {
-        symbol: 'TUSD',
-        name: 'Dollar token',
-        icon: ethIcon,
-        address: '',
-      },
-      {
-        symbol: 'TUAH',
-        name: 'Hryvna token',
-        icon: ethIcon,
-        address: '',
-      },
-      {
-        symbol: 'TRUB',
-        name: 'Ruble token',
-        icon: ethIcon,
-        address: '',
-      },
-    ],
+    tokens: availableTokens,
     isLoading,
   };
 }
@@ -106,8 +108,9 @@ export function useToken(symbol: string) {
 
 export async function getRate(): Promise<Rate> {
   return {
-    price: Math.random(),
-    reversePrice: Math.random() * 100,
+    price: Number(Math.random()
+      .toFixed(6)),
+    reversePrice: Number((Math.random() * 100).toFixed(6)),
   };
 }
 
@@ -141,9 +144,9 @@ export function useRate(fromToken: Token | null, toToken: Token | null, amount: 
     }
   }, [fromToken, toToken]);
 
-  const minReceived = (rate?.price || 0) * amount;
-  const priceImpact = Math.floor(Math.random() * 10) / 100;
-  const liquidityProviderFee = Math.floor(Math.random() * 10) / 1000;
+  const minReceived = Number(((rate?.price || 0) * amount).toFixed(6));
+  const priceImpact = Number((Math.floor(Math.random() * 10) / 100).toFixed(6));
+  const liquidityProviderFee = Number((Math.floor(Math.random() * 10) / 1000).toFixed(6));
 
   return {
     rate,
