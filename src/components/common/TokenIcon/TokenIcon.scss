@@ -1,0 +1,18 @@
+.token-icon {
+    width: 24px;
+    height: 24px;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: 50%;
+
+    img {
+        width: inherit;
+        height: inherit;
+
+        object-fit: cover;
+
+        border-radius: inherit;
+    }
+}

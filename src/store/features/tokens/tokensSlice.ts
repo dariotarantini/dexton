@@ -53,47 +53,47 @@ export function useAvailableTokens() {
 
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(setIsFetching());
-
-    dispatch(
-      setItemsAndFetched([
-        {
-          symbol: 'TON',
-          name: 'Toncoin',
-          icon: tonconinIcon,
-          address: '',
-        },
-        {
-          symbol: 'ETH',
-          name: 'Ether',
-          icon: ethIcon,
-          address: '',
-        },
-        {
-          symbol: 'TUSD',
-          name: 'Dollar token',
-          icon: ethIcon,
-          address: '',
-        },
-        {
-          symbol: 'TUAH',
-          name: 'Hryvna token',
-          icon: ethIcon,
-          address: '',
-        },
-        {
-          symbol: 'TRUB',
-          name: 'Ruble token',
-          icon: ethIcon,
-          address: '',
-        },
-      ]),
-    );
-  }, [isLoaded]);
+  // useEffect(() => {
+  //   dispatch(setIsFetching());
+  //
+  //   dispatch(
+  //     setItemsAndFetched(),
+  //   );
+  // }, [isLoaded]);
 
   return {
-    tokens,
+    tokens: [
+      {
+        symbol: 'TON',
+        name: 'Toncoin',
+        icon: tonconinIcon,
+        address: '',
+      },
+      {
+        symbol: 'ETH',
+        name: 'Ether',
+        icon: ethIcon,
+        address: '',
+      },
+      {
+        symbol: 'TUSD',
+        name: 'Dollar token',
+        icon: ethIcon,
+        address: '',
+      },
+      {
+        symbol: 'TUAH',
+        name: 'Hryvna token',
+        icon: ethIcon,
+        address: '',
+      },
+      {
+        symbol: 'TRUB',
+        name: 'Ruble token',
+        icon: ethIcon,
+        address: '',
+      },
+    ],
     isLoading,
   };
 }

@@ -62,6 +62,7 @@ function ChartsPage() {
 
             <div className="chart-card__chart">
               <GradientChart
+                autoSkip={false}
                 type="bar"
                 width={423}
                 height={160}
@@ -69,20 +70,28 @@ function ChartsPage() {
                 scalesX
                 items={[
                   {
-                    time: +new Date() / 1000,
+                    time: +new Date() / 1000 - (60 * 60 * 5),
                     price: 100,
                   },
                   {
-                    time: +new Date() / 1000,
+                    time: +new Date() / 1000 - (60 * 60 * 4),
                     price: 200,
                   },
                   {
-                    time: +new Date() / 1000,
+                    time: +new Date() / 1000 - (60 * 60 * 3),
                     price: 150,
                   },
                   {
+                    time: +new Date() / 1000 - (60 * 60 * 2),
+                    price: 120,
+                  },
+                  {
+                    time: +new Date() / 1000 - (60 * 60),
+                    price: 180,
+                  },
+                  {
                     time: +new Date() / 1000,
-                    price: 150,
+                    price: 110,
                   },
                 ]}
               />

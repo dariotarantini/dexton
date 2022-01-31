@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import InputRange from 'react-input-range';
 import PageBackIcon from '../icons/PageBackIcon';
 import AddLiquidityPageHistoryIcon from '../icons/AddLiquidityPageHistoryIcon';
@@ -1135,6 +1135,12 @@ function AddLiquidityPage() {
   const [minPrice, setMinPrice] = useState<null | number>(350);
   const [maxPrice, setMaxPrice] = useState<null | number>(1200);
 
+  const [isInitialized, setIsInitialized] = useState(false);
+
+  useEffect(() => {
+    setIsInitialized(toToken?.symbol !== 'TUSD');
+  }, [fromToken, toToken]);
+
   const [fee, setFee] = useState(0.5);
 
   return (
@@ -1158,11 +1164,16 @@ function AddLiquidityPage() {
       </div>
 
       <div className="page-content page-content-liquidity">
-        <div className="page-content-liquidity__info">
-          This pool must be initialized before you can add liquidity. To initialize, select a
-          starting price for the pool. Then, enter your liquidity price range and deposit amount.
-          Gas fees will be higher than usual due to the initialization transaction.
-        </div>
+        {
+          fromToken && toToken && !isInitialized ? (
+            <div className="page-content-liquidity__info">
+              This pool must be initialized before you can add liquidity. To initialize, select a
+              starting price for the pool. Then, enter your liquidity price range and deposit
+              amount.
+              Gas fees will be higher than usual due to the initialization transaction.
+            </div>
+          ) : null
+        }
         <div className="page-blocks">
           <div className="page-blocks__col">
             <div className="page-block">
@@ -1214,29 +1225,42 @@ function AddLiquidityPage() {
             <div className="page-blocks__col">
               <div className="page-block">
                 <div className="page-block__title">
-                  Select Price Range
+                  {isInitialized ? 'Select Price Range' : 'Set Start Price'}
                 </div>
 
-                <div className="page-block__content page-block__content--range">
-                  <InputRange
-                    step={1}
-                    maxValue={1500}
-                    minValue={0}
-                    value={{
-                      min: minPrice ?? 0,
-                      max: maxPrice ?? 0,
-                    }}
-                    onChange={(value) => {
-                      if (typeof value === 'object') {
-                        setMinPrice(value.min);
-                        setMaxPrice(value.max);
-                      }
-                    }}
-                  />
-                </div>
+                {isInitialized ? (
+                  <div className="page-block__content page-block__content--range">
+                    <InputRange
+                      step={1}
+                      maxValue={1500}
+                      minValue={0}
+                      value={{
+                        min: minPrice ?? 0,
+                        max: maxPrice ?? 0,
+                      }}
+                      onChange={(value) => {
+                        if (typeof value === 'object') {
+                          setMinPrice(value.min);
+                          setMaxPrice(value.max);
+                        }
+                      }}
+                    />
+                  </div>
+                ) : (
+                  <div className="page-block__content page-block__content--range">
+                    <div className="price-input">
+                      <input type="number" placeholder="0.000"/>
+                      <div className="price-input__info">
+                        0 TON per ETH
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
               <div className="page-block liquidity-prices">
-                <div className="liquidity-price">
+                <div
+                  className={['liquidity-price', !isInitialized ? 'liquidity-price--disabled' : ''].join(' ')}
+                >
                   <div className="liquidity-price__title">
                     Min Price
                   </div>
@@ -1271,7 +1295,9 @@ function AddLiquidityPage() {
                     </button>
                   </div>
                 </div>
-                <div className="liquidity-price">
+                <div
+                  className={['liquidity-price', !isInitialized ? 'liquidity-price--disabled' : ''].join(' ')}
+                >
                   <div className="liquidity-price__title">
                     Max Price
                   </div>

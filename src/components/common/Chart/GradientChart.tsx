@@ -55,6 +55,7 @@ interface GradientChartProps {
   height: number;
   scalesX?: boolean;
   date?: boolean;
+  autoSkip?: boolean;
   color?: 'green' | 'red' | 'blue';
   type?: 'bar' | 'line';
 }
@@ -65,6 +66,7 @@ function GradientChart({
   height,
   scalesX = false,
   date = false,
+  autoSkip = true,
   color = 'red',
   type = 'line',
 }: GradientChartProps) {
@@ -104,7 +106,20 @@ function GradientChart({
     const data: number[] = [];
 
     items.forEach((v) => {
-      labels.push(new Date(v.time * 1000)[date ? 'toLocaleDateString' : 'toLocaleTimeString']());
+      let dateTime: Date | string = new Date(v.time * 1000);
+      if (date) {
+        dateTime = dateTime.toLocaleDateString([], {
+          day: '2-digit',
+          month: '2-digit',
+        });
+      } else {
+        dateTime = dateTime.toLocaleTimeString([], {
+          hour: '2-digit',
+          minute: '2-digit',
+        });
+      }
+
+      labels.push(dateTime);
       data.push(v.price);
     });
 
@@ -160,7 +175,7 @@ function GradientChart({
               count: type === 'bar' ? undefined : 4,
               stepSize: 10,
               sampleSize: 10,
-              autoSkip: true,
+              autoSkip,
               autoSkipPadding: 40,
               align: 'start',
               maxRotation: 0,

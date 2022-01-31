@@ -7,6 +7,7 @@ import Tag from '../components/common/Tag/Tag';
 import Button from '../components/common/Button/Button';
 import Card from '../components/common/Card/Card';
 import GradientChart from '../components/common/Chart/GradientChart';
+import TokenIcon from '../components/common/TokenIcon/TokenIcon';
 
 function ChartsPoolPage() {
   const { pair } = useParams();
@@ -33,10 +34,10 @@ function ChartsPoolPage() {
           </Tag>
         </div>
         <div className="page-toolbar">
-          <Button outline>
+          <Button to={`/liquidity/add?from=${fromToken.symbol}&to=${toToken.symbol}`} outline>
             Add Liquidity
           </Button>
-          <Button>
+          <Button to={`/?from=${fromToken.symbol}&to=${toToken.symbol}`}>
             Swap
           </Button>
         </div>
@@ -72,7 +73,10 @@ function ChartsPoolPage() {
               </div>
               <div className="pool-information-card-item">
                 <div className="pool-information-card-item__name">
-                  ETH Locked
+                  {fromToken.symbol}
+                  {' '}
+                  Locked
+                  <TokenIcon url={fromToken.icon}/>
                 </div>
                 <div className="pool-information-card-item__value">
                   $107.2m
@@ -80,7 +84,10 @@ function ChartsPoolPage() {
               </div>
               <div className="pool-information-card-item">
                 <div className="pool-information-card-item__name">
-                  TON Locked
+                  {toToken.symbol}
+                  {' '}
+                  Locked
+                  <TokenIcon url={toToken.icon}/>
                 </div>
                 <div className="pool-information-card-item__value">
                   $20.1m
@@ -128,11 +135,13 @@ function ChartsPoolPage() {
 
         <div className="pool-page-charts-info">
           <div className="pool-page-charts-info__left">
+            <TokenIcon url={fromToken.icon}/>
             1 ETH = 720 TON
           </div>
           <div className="pool-page-charts-info__divider"/>
           <div className="pool-page-charts-info__right">
             1 TON = 0.00001245 ETH
+            <TokenIcon url={toToken.icon}/>
           </div>
         </div>
 
@@ -145,42 +154,119 @@ function ChartsPoolPage() {
             <Card>
               <div className="card-table">
                 <div className="card-table__row">
-                  <div className="card-table__col">Pool</div>
-                  <div className="card-table__col">TVL</div>
-                  <div className="card-table__col">Volume 1Day</div>
-                  <div className="card-table__col">Fees 1Day</div>
+                  <div className="card-table__col">Action</div>
+                  <div className="card-table__col">Total Value</div>
+                  <div className="card-table__col">Amount</div>
+                  <div className="card-table__col">Amount</div>
+                  <div className="card-table__col">Time</div>
                 </div>
                 <div className="card-table__row">
-                  <Link
-                    to={`/charts/${tokens[0].symbol}-${tokens[1].symbol}`}
-                    className="card-table__col"
+                  <a
+                    href="https://explore.ton.org/..."
+                    target="_blank"
+                    className="card-table__col card-table__col--link"
+                    rel="noreferrer"
                   >
-                    <Tokico
-                      fromToken={tokens[0]}
-                      toToken={tokens[1]}
-                    />
-
-                    <Tag color="blue">
-                      1%
-                    </Tag>
-                  </Link>
-                  <div className="card-table__col">$512.12m</div>
-                  <div className="card-table__col">$512.12m</div>
-                  <div className="card-table__col">$512.12m</div>
+                    Add
+                    {' '}
+                    {tokens[0].symbol}
+                    and
+                    {' '}
+                    {tokens[1].symbol}
+                  </a>
+                  <div className="card-table__col">
+                    $134k
+                  </div>
+                  <div className="card-table__col">
+                    100
+                    {' '}
+                    {fromToken.symbol}
+                  </div>
+                  <div className="card-table__col">
+                    243
+                    {' '}
+                    {toToken.symbol}
+                  </div>
+                  <a
+                    href="https://explore.ton.org/..."
+                    target="_blank"
+                    className="card-table__col card-table__col--link"
+                    rel="noreferrer"
+                  >
+                    0xC660...56dF
+                  </a>
                 </div>
                 <div className="card-table__row">
-                  <Link
-                    to={`/charts/${tokens[0].symbol}-${tokens[1].symbol}`}
-                    className="card-table__col"
+                  <a
+                    href="https://explore.ton.org/..."
+                    target="_blank"
+                    className="card-table__col card-table__col--link"
+                    rel="noreferrer"
                   >
-                    <Tokico
-                      fromToken={tokens[0]}
-                      toToken={tokens[1]}
-                    />
-                  </Link>
-                  <div className="card-table__col">$512.12m</div>
-                  <div className="card-table__col">$512.12m</div>
-                  <div className="card-table__col">$512.12m</div>
+                    Add
+                    {' '}
+                    {tokens[0].symbol}
+                    and
+                    {' '}
+                    {tokens[1].symbol}
+                  </a>
+                  <div className="card-table__col">
+                    $134k
+                  </div>
+                  <div className="card-table__col">
+                    100
+                    {' '}
+                    {fromToken.symbol}
+                  </div>
+                  <div className="card-table__col">
+                    243
+                    {' '}
+                    {toToken.symbol}
+                  </div>
+                  <a
+                    href="https://explore.ton.org/..."
+                    target="_blank"
+                    className="card-table__col card-table__col--link"
+                    rel="noreferrer"
+                  >
+                    0xC660...56dF
+                  </a>
+                </div>
+                <div className="card-table__row">
+                  <a
+                    href="https://explore.ton.org/..."
+                    target="_blank"
+                    className="card-table__col card-table__col--link"
+                    rel="noreferrer"
+                  >
+                    Add
+                    {' '}
+                    {tokens[0].symbol}
+                    and
+                    {' '}
+                    {tokens[1].symbol}
+                  </a>
+                  <div className="card-table__col">
+                    $134k
+                  </div>
+                  <div className="card-table__col">
+                    100
+                    {' '}
+                    {fromToken.symbol}
+                  </div>
+                  <div className="card-table__col">
+                    243
+                    {' '}
+                    {toToken.symbol}
+                  </div>
+                  <a
+                    href="https://explore.ton.org/..."
+                    target="_blank"
+                    className="card-table__col card-table__col--link"
+                    rel="noreferrer"
+                  >
+                    0xC660...56dF
+                  </a>
                 </div>
               </div>
             </Card>

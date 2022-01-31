@@ -56,6 +56,7 @@ function FeeCard({
 
   return (
     <button
+      disabled={disabled}
       className={['fee-card', checkIcon ? 'fee-card--active' : '', disabled ? 'fee-card--disabled' : ''].join(' ')}
       onClick={onClick ? () => onClick() : undefined}
     >
@@ -65,15 +66,16 @@ function FeeCard({
           %
 
           {tags}
-
-          <span
-            className="fee-card__edit"
-          >
-            {editIcon && 'Edit'}
-            {checkIcon && <CheckIcon/>}
-          </span>
         </>
-      ) : <div/>}
+      ) : 'Select Pair'}
+
+      <button
+        disabled={disabled}
+        className="fee-card__edit"
+      >
+        {editIcon && 'Edit'}
+        {checkIcon && <CheckIcon/>}
+      </button>
     </button>
   );
 }

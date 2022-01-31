@@ -41,6 +41,10 @@
             color: var(--accentColorActive);
         }
     }
+
+    &:disabled {
+        color: var(--mutedTextColor);
+    }
 }
 
 .fee-card__edit {
@@ -67,6 +71,10 @@
 
     &:active {
         color: var(--accentColorActive);
+    }
+
+    &:disabled {
+        color: var(--mutedTextColor);
     }
 }
 

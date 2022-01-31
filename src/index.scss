@@ -176,6 +176,17 @@ h4 {
     margin-top: 32px;
 }
 
+@keyframes opacity-0-1 {
+    0% {
+        opacity: 0;
+        transform: scale(.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .page-content-liquidity__info {
     padding: 24px;
 
@@ -186,6 +197,8 @@ h4 {
     background: rgba(48, 55, 87, 0.05);
 
     border-radius: 24px;
+
+    animation: var(--animationDuration) opacity-0-1;
 }
 
 .page-content__empty {
@@ -367,6 +380,12 @@ h1 {
     grid-gap: 16px;
 }
 
+.liquidity-price--disabled {
+    cursor: default;
+    pointer-events: none;
+    opacity: .5;
+}
+
 .liquidity-price__title {
     margin-bottom: 8px;
 
@@ -455,6 +474,43 @@ h1 {
 
 .page-block__content--range {
     margin-bottom: 60px;
+}
+
+.price-input {
+    padding: 16px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid var(--borderColor);
+    border-radius: 14px;
+
+    input {
+        width: 60%;
+
+        border: none;
+        border-radius: 0;
+        outline: none;
+
+        font-family: 'Fira Code', monospace;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 19px;
+        line-height: 25px;
+
+        &::placeholder {
+        }
+    }
+
+    .price-input__info {
+        margin-left: auto;
+
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+
+        color: var(--mutedTextColor);
+    }
 }
 
 .input-range__slider {
@@ -547,9 +603,16 @@ h1 {
 }
 
 .pool-information-card-item__name {
+    display: flex;
+    align-items: center;
+
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
+
+    .token-icon {
+        margin-left: 8px;
+    }
 }
 
 .pool-information-card-item__value {
@@ -588,6 +651,18 @@ h1 {
     font-weight: bold;
     font-size: 16px;
     line-height: 20px;
+}
+
+.pool-page-charts-info__left {
+    .token-icon {
+        margin-right: 12px;
+    }
+}
+
+.pool-page-charts-info__right {
+    .token-icon {
+        margin-left: 12px;
+    }
 }
 
 .pool-page-charts-info__divider {

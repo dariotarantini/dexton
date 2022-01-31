@@ -100,6 +100,24 @@
     }
 }
 
+.card-table__col--link {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 20px;
+
+    color: var(--accentColor) !important;
+
+    text-decoration: none;
+
+    transition: all var(--animationDuration) ease-in-out;
+
+    &:hover {
+        text-decoration: none !important;
+
+        color: var(--accentColorActive) !important;
+    }
+}
+
 .card-table-pagination {
     margin-top: 32px;
 
