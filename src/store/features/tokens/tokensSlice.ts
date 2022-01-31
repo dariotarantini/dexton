@@ -98,6 +98,12 @@ export function useAvailableTokens() {
   };
 }
 
+export function useToken(symbol: string) {
+  const { tokens } = useAvailableTokens();
+
+  return tokens.find((token) => token.symbol === symbol);
+}
+
 export async function getRate(): Promise<Rate> {
   return {
     price: Math.random(),

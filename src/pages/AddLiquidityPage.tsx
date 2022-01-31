@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import InputRange from 'react-input-range';
 import PageBackIcon from '../icons/PageBackIcon';
@@ -10,6 +10,8 @@ import { Token } from '../store/features/types';
 import Button from '../components/common/Button/Button';
 import SelectFeeModal from '../components/modals/SelectFeeModal/SelectFeeModal';
 import { useOpenModal } from '../store/features/modals/modalsSlice';
+import { useAvailableTokens } from '../store/features/tokens/tokensSlice';
+import { useQuery } from '../utils/hooks';
 
 function DuckArt() {
   return (
@@ -1129,6 +1131,12 @@ function PlusIcon() {
 function AddLiquidityPage() {
   const openModal = useOpenModal();
 
+  const query = useQuery();
+  const from = query.get('from');
+  const to = query.get('to');
+
+  const { tokens } = useAvailableTokens();
+
   const [fromToken, setFromToken] = useState<Token | null>(null);
   const [toToken, setToToken] = useState<Token | null>(null);
 
@@ -1140,6 +1148,16 @@ function AddLiquidityPage() {
   useEffect(() => {
     setIsInitialized(toToken?.symbol !== 'TUSD');
   }, [fromToken, toToken]);
+
+  useEffect(() => {
+    if (from) {
+      setFromToken(tokens.find((t) => t.symbol === from) || null);
+    }
+
+    if (to) {
+      setToToken(tokens.find((t) => t.symbol === to) || null);
+    }
+  }, [from, to]);
 
   const [fee, setFee] = useState(0.5);
 

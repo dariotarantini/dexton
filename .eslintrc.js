@@ -36,6 +36,7 @@ module.exports = {
     '@typescript-eslint/ban-ts-comment': 'off',
     'jsx-a11y/no-static-element-interactions': 'off',
     'no-nested-ternary': 'off',
+    'import/prefer-default-export': 'off',
   },
   settings: {
     'import/resolver': {

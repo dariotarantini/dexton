@@ -15,6 +15,7 @@ import { useSwap } from '../../../store/features/swap/swapSlice';
 import ConfirmExchangeModal from '../../modals/ConfirmExchangeModal/ConfirmExchangeModal';
 import makeInfoTooltipContent from './makeInfoTooltipContent';
 import ExchangeSettingsModal from '../../modals/ExchangeSettingsModal/ExchangeSettingsModal';
+import { useQuery } from '../../../utils/hooks';
 
 function ExchangeCard() {
   const openModal = useOpenModal();
@@ -25,6 +26,10 @@ function ExchangeCard() {
     setFromToken,
     setToToken,
   } = useSwap();
+
+  const query = useQuery();
+  const from = query.get('from');
+  const to = query.get('to');
 
   const [fromValue, setFromValue] = useState<string>('');
   const [toValue, setToValue] = useState<string>('');
@@ -51,6 +56,16 @@ function ExchangeCard() {
       setToToken(tokens[1]);
     }
   }, [fromToken, toToken, tokens]);
+
+  useEffect(() => {
+    if (from) {
+      setFromToken(tokens.find((t) => t.symbol === from) || null);
+    }
+
+    if (to) {
+      setToToken(tokens.find((t) => t.symbol === to) || null);
+    }
+  }, [from, to]);
 
   function doExchange() {
     openModal(({ closeModal }) => (
