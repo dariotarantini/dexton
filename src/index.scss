@@ -1,5 +1,5 @@
 @import '~react-input-range/lib/css/index.css';
-
+@import './styles/mixins';
 
 *, *::before, *::after {
     box-sizing: border-box;
@@ -114,7 +114,6 @@ h4 {
 }
 
 .page {
-
 }
 
 .page-title {
@@ -670,4 +669,40 @@ h1 {
     width: 1px;
 
     background-color: var(--borderColor);
+}
+
+.main-page__cards-grid {
+    display: grid;
+    grid-template-columns: .43fr .57fr;
+    grid-gap: 25px;
+}
+
+.popular-swaps {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+@include tablet {
+    .main-page__cards-grid {
+        margin-top: 0;
+
+        display: block;
+    }
+
+    .App {
+        padding: 0 25px;
+    }
+
+    .popular-swaps {
+        .pair-card {
+            max-width: 100%;
+            margin: 0;
+        }
+
+        .pair-card + .pair-card {
+            margin-left: 0;
+            margin-top: 16px;
+        }
+    }
 }

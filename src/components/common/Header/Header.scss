@@ -1,3 +1,5 @@
+@import "../../../styles/mixins";
+
 .header {
     margin-top: 64px;
     margin-bottom: 80px;
@@ -6,6 +8,20 @@
 
     display: flex;
     align-items: center;
+
+    .header__toggle {
+        all: unset;
+
+        display: none;
+        margin-left: auto;
+    }
+
+    .header__content {
+        margin-left: auto;
+
+        display: flex;
+        align-items: center;
+    }
 
     .header__logo {
         display: flex;
@@ -51,8 +67,6 @@
     }
 
     .header__links {
-        margin-left: auto;
-
         display: flex;
         align-items: center;
 
@@ -87,5 +101,60 @@
 
     .header__button {
         margin-left: 25px;
+    }
+
+    @include tablet {
+        margin-top: 40px;
+        margin-bottom: 40px;
+
+        .header__toggle {
+            display: block;
+        }
+
+        .header__content {
+            display: none;
+        }
+
+        &.header--open {
+            .header__content {
+                position: fixed;
+
+                z-index: 1000;
+
+                top: 76px;
+                right: 0;
+                bottom: 0;
+                left: 0;
+
+                padding-top: 80px;
+
+                background-color: white;
+
+                display: flex;
+                flex-direction: column;
+            }
+
+            .header__links {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .header__link {
+                text-align: center;
+                margin-left: 0;
+
+                font-weight: bold;
+            }
+
+            .header__link + .header__link {
+                margin-top: 25px;
+            }
+
+            .header__button {
+                margin-top: 25px;
+                margin-left: 0;
+            }
+        }
     }
 }

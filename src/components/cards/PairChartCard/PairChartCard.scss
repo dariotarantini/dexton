@@ -1,4 +1,9 @@
+@import "../../../styles/mixins";
+
 .pair-chart-card {
+    @include tablet {
+        margin-top: 25px;
+    }
 }
 
 .pair-chart-card__head {
@@ -40,6 +45,10 @@
 
 .pair-chart-card__days {
     display: flex;
+
+    @include tablet {
+        display: none;
+    }
 }
 
 .pair-chart-card__day {

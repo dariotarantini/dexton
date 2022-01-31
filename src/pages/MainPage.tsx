@@ -10,21 +10,13 @@ function MainPage() {
 
   return (
     <div className="page">
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '.43fr .57fr',
-        gridGap: '25px',
-      }}
-      >
+      <div className="main-page__cards-grid">
         <ExchangeCard/>
         <PairChartCard/>
       </div>
 
       <PageSection title="Popular swaps">
-        <div style={{
-          display: 'flex',
-        }}
-        >
+        <div className="popular-swaps">
           {
             popularSwaps.map((swap) => (
               <PairCard

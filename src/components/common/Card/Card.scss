@@ -1,8 +1,14 @@
+@import "../../../styles/mixins";
+
 .card {
     padding: 32px;
 
     border: 1px solid var(--borderColor);
     border-radius: 24px;
+
+    @include tablet {
+        padding: 25px;
+    }
 }
 
 .card__head {

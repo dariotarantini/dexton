@@ -1,4 +1,4 @@
-import { Link, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import InputRange from 'react-input-range';
 import PageBackIcon from '../icons/PageBackIcon';

@@ -95,7 +95,6 @@ function ExchangeCard() {
           />
         </>
       )}
-      className="exchange-card"
       title="Swap your tokens"
     >
       <div className="exchange-card">

@@ -1,3 +1,5 @@
+@import "../../../styles/mixins";
+
 .footer {
     margin-top: 80px;
 
@@ -8,6 +10,17 @@
     justify-content: space-between;
 
     border-top: 1px solid #D9D9D9;
+
+    @include mobile {
+        flex-direction: column;
+        justify-content: center;
+
+        padding: 25px 0;
+
+        .footer__logo {
+            margin-bottom: 25px;
+        }
+    }
 }
 
 .footer__logo {

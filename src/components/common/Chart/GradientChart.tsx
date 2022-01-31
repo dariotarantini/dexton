@@ -86,13 +86,20 @@ function GradientChart({
   useEffect(() => {
     const onMouseEnter = () => setHover(true);
     const onMouseLeave = () => setHover(false);
+    const onResize = () => {
+      if (chartRef.current) {
+        chartRef.current?.resize();
+      }
+    };
 
     chartRef.current?.canvas.addEventListener('mouseenter', onMouseEnter);
     chartRef.current?.canvas.addEventListener('mouseleave', onMouseLeave);
+    window.addEventListener('resize', onResize);
 
     return () => {
       chartRef.current?.canvas.removeEventListener('mouseenter', onMouseEnter);
       chartRef.current?.canvas.removeEventListener('mouseleave', onMouseLeave);
+      window.removeEventListener('resize', onResize);
     };
   }, [chartRef]);
 
@@ -140,6 +147,8 @@ function GradientChart({
         ],
       },
       options: {
+        responsive: true,
+        maintainAspectRatio: false,
         plugins: {
           legend: { display: false },
           tooltip: {
@@ -210,8 +219,11 @@ function GradientChart({
     <ReactChart
       // @ts-ignore
       ref={chartRef}
-      width={width}
-      height={height}
+      style={{
+        // maxWidth: width,
+        width: '100%',
+        maxHeight: height,
+      }}
       options={chartData.options}
       data={chartData.data}
       type={type}
