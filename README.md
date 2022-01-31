@@ -1,7 +1,7 @@
 # Frontend of TON DEX
 
-### [Live Demo](https://dexton.vercel.app/)
-#### [Figma](https://www.figma.com/file/9Ala1uxnC5mai0LeTqJmR9/TON-Swap-Contest?node-id=0%3A1)
+### [Live Demo](https://dexton.vercel.app/) &nbsp;&nbsp; [Figma](https://www.figma.com/file/9Ala1uxnC5mai0LeTqJmR9/TON-Swap-Contest?node-id=0%3A1)
+#### 
 
 ## Stack
 
