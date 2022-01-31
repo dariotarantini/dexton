@@ -16,6 +16,7 @@ import ConfirmExchangeModal from '../../modals/ConfirmExchangeModal/ConfirmExcha
 import makeInfoTooltipContent from './makeInfoTooltipContent';
 import ExchangeSettingsModal from '../../modals/ExchangeSettingsModal/ExchangeSettingsModal';
 import { useQuery } from '../../../utils/hooks';
+import AccountModal from '../../modals/AccountModal/AccountModal';
 
 function ExchangeCard() {
   const openModal = useOpenModal();
@@ -82,11 +83,22 @@ function ExchangeCard() {
     openModal(({ closeModal }) => <ExchangeSettingsModal closeModal={closeModal}/>);
   }
 
+  function openHistory() {
+    openModal(({ closeModal }) => (
+      <AccountModal tab="history" closeModal={closeModal}/>
+    ));
+  }
+
   return (
     <Card
       right={(
         <>
-          <img src={clockIcon} alt="History" className="card__icon"/>
+          <img
+            onClick={() => openHistory()}
+            src={clockIcon}
+            alt="History"
+            className="card__icon"
+          />
           <img
             onClick={() => openSettings()}
             src={preferencesIcon}

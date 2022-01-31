@@ -101,10 +101,11 @@ function AccountModalWalletTab({ closeModal }: AccountModalWalletTabProps) {
 
 interface AccountModalProps {
   closeModal: CloseModal;
+  tab?: string;
 }
 
-function AccountModal({ closeModal }: AccountModalProps) {
-  const [activeTab, setActiveTab] = useState('wallet');
+function AccountModal({ closeModal, tab = 'wallet' }: AccountModalProps) {
+  const [activeTab, setActiveTab] = useState(tab);
 
   return (
     <Modal

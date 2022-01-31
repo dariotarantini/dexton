@@ -583,6 +583,12 @@ h1 {
 
 .chart-card__chart {
     margin-top: 24px;
+
+    max-width: 100%;
+
+    canvas {
+        max-width: 100%;
+    }
 }
 
 .pool-page-charts {

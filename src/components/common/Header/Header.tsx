@@ -93,7 +93,7 @@ function Header() {
               )}
               onClick={() => {
                 openModal(({ closeModal }) => (
-                  <AccountModal closeModal={closeModal}/>
+                  <AccountModal tab="wallet" closeModal={closeModal}/>
                 ));
               }}
               icon={(
