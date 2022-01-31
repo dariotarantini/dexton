@@ -135,13 +135,13 @@ function ChartsPoolPage() {
 
         <div className="pool-page-charts-info">
           <div className="pool-page-charts-info__left">
-            1 TON = 0.00001245 ETH
             <TokenIcon url={toToken.icon}/>
+            1 TON = 0.00001245 ETH
           </div>
           <div className="pool-page-charts-info__divider"/>
           <div className="pool-page-charts-info__right">
-            <TokenIcon url={fromToken.icon}/>
             1 ETH = 720 TON
+            <TokenIcon url={fromToken.icon}/>
           </div>
         </div>
 
