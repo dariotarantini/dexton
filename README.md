@@ -1,6 +1,7 @@
 # Frontend of TON DEX
 
 ### [Live Demo](https://dexton.vercel.app/)
+#### [Figma](https://www.figma.com/file/9Ala1uxnC5mai0LeTqJmR9/TON-Swap-Contest?node-id=0%3A1)
 
 ## Stack
 
@@ -10,18 +11,18 @@
 - `TypeScript`
 - `SCSS`
 
-## Install and Start Loccaly
+## Install and Start Locally
 
 First, install the packages:
 
 ```bash
-# yarn install
+yarn install
 ```
 
 Then run the local server:
 
 ```bash
-# yarn start
+yarn start
 ```
 Open http://localhost:3000 to view it in the browser.
 
