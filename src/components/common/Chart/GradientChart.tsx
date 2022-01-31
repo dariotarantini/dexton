@@ -15,7 +15,6 @@ import {
   Tooltip,
 } from 'chart.js';
 import { Chart as ReactChart } from 'react-chartjs-2';
-import Zoom from 'chartjs-plugin-zoom';
 import { animationDuration } from '../../../styleProps';
 import { PriceAtTime } from '../../../store/features/tokens/tokensSlice';
 
@@ -28,7 +27,6 @@ ChartJS.register(
   Tooltip,
   Legend,
   Filler,
-  Zoom,
 );
 ChartJS.register(...registerables);
 
@@ -155,25 +153,6 @@ function GradientChart({
             enabled: false,
             mode: 'index',
             intersect: false,
-          },
-          zoom: {
-            zoom: {
-              wheel: {
-                enabled: true,
-                speed: 0.01,
-              },
-              pinch: {
-                enabled: true,
-              },
-              drag: {
-                enabled: true,
-              },
-              mode: 'x',
-            },
-            pan: {
-              enabled: true,
-              mode: 'x',
-            },
           },
         },
         scales: {

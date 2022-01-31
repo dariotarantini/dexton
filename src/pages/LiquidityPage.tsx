@@ -29,6 +29,7 @@ function LiquidityPage() {
         <h1 className="page-title">
           Your Liquidity
         </h1>
+
         {
           isWalletConnected && (
             <div className="page-tabs">
@@ -60,7 +61,7 @@ function LiquidityPage() {
           )
         }
 
-        <Button to="/liquidity/add" style={{ marginLeft: 'auto' }} outline icon={<PlusIcon/>}>
+        <Button to="/liquidity/add" outline icon={<PlusIcon/>}>
           Add liquidity
         </Button>
       </div>
@@ -82,7 +83,7 @@ function LiquidityPage() {
               </Button>
             </div>
           ) : (
-            <div className="Liquidity-cards">
+            <div className="liquidity-cards">
               <LiquidityCard/>
               <LiquidityCard/>
               <LiquidityCard/>

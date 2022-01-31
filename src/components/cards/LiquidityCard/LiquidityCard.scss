@@ -1,4 +1,6 @@
-.Liquidity-cards {
+@import "../../../styles/mixins";
+
+.liquidity-cards {
 
 }
 
@@ -150,5 +152,40 @@
 
     &:hover {
         color: var(--accentColorActive);
+    }
+}
+
+
+@include tablet {
+    .liquidity-card {
+        padding: 24px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .liquidity-card__tags {
+        margin-top: 12px;
+        margin-left: 0;
+    }
+
+    .liquidity-card__swap {
+        margin-top: 12px;
+        margin-left: 0;
+        flex-direction: column;
+    }
+
+    .liquidity-card__details-link {
+        margin-left: 0;
+        margin-top: 24px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .liquidity-card__swap-icon {
+        margin-top: 6px;
+        margin-bottom: 6px;
     }
 }

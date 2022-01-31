@@ -1162,7 +1162,7 @@ function AddLiquidityPage() {
   const [fee, setFee] = useState(0.5);
 
   return (
-    <div className="page">
+    <div className="page add-liquidity-page">
       <div className="page-head page-head--subpage">
         <Link to="/liquidity" className="page-back">
           <PageBackIcon/>
@@ -1201,12 +1201,10 @@ function AddLiquidityPage() {
 
               <div className="page-block__content">
                 <TokenAmountInput
-                  label="From"
                   token={fromToken}
                   onChangeToken={setFromToken}
                 />
                 <TokenAmountInput
-                  label="To"
                   token={toToken}
                   onChangeToken={setToToken}
                 />
