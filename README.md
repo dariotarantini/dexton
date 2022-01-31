@@ -32,7 +32,7 @@ Open http://localhost:3000 to view it in the browser.
 - UI of the wallet status with transaction history.
 - Liquidity page. Possibility to view the list of pools in which the liquidity was added. UI for liquidity is present.
 - Liquidity adding page. Possibility to create liquidity for any pair, taking into account that such a pool didn't exist before.
-- Charts page. It's possible to view the lists of all pools and transactions on the service.
+- Charts page. It's possible to view the lists of all pools and transactions in the app.
 - Pool page. Detailed information with pool statistics as well as pool transaction history.
 
 ## Description
