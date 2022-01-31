@@ -66,5 +66,11 @@
 .pair-card__chart {
     margin-top: 7px;
 
+    max-width: 75px;
+
     text-align: right;
+
+    canvas {
+        max-width: 75px;
+    }
 }
